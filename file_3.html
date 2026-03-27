@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloudweave — Premium Cozy Blankets</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Sticky CTA bar -->
+  <div class="sticky-cta">
+    <span>☁️ Free shipping on orders over $75 — Limited time offer</span>
+    <a href="#shop" class="sticky-btn">Shop Now</a>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <p>🎁 Holiday Sale — Up to 30% off sitewide · Free returns always</p>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">☁</span>
+        <span class="logo-text">Cloudweave</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="nav-icon" aria-label="Search">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </a>
+        <a href="#" class="nav-icon" aria-label="Cart">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </a>
+        <button class="menu-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in">
+      <span class="hero-badge">Handcrafted · Sustainable · Premium</span>
+      <h1 class="hero-title">Wrap Yourself<br/><em>in Pure Comfort</em></h1>
+      <p class="hero-subtitle">Discover blankets woven with intention — soft enough to dream in, beautiful enough to display.</p>
+      <div class="hero-actions">
+        <a href="#shop" class="btn btn-primary">Shop Collections</a>
+        <a href="#about" class="btn btn-ghost">Our Story →</a>
+      </div>
+      <div class="hero-trust">
+        <span>⭐⭐⭐⭐⭐ 4,800+ happy customers</span>
+      </div>
+    </div>
+    <div class="hero-image fade-in">
+      <img src="https://picsum.photos/seed/cozy-blanket-hero/700/800" alt="Cozy blanket lifestyle" />
+      <div class="hero-badge-float">
+        <span class="badge-label">New Arrival</span>
+        <span class="badge-name">Arctic Dream</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Strip -->
+  <section class="feature-strip">
+    <div class="strip-container">
+      <div class="strip-item fade-in">
+        <span class="strip-icon">🌿</span>
+        <div>
+          <strong>100% Organic</strong>
+          <p>Ethically sourced fibers</p>
+        </div>
+      </div>
+      <div class="strip-item fade-in">
+        <span class="strip-icon">🚚</span>
+        <div>
+          <strong>Free Shipping</strong>
+          <p>On all orders over $75</p>
+        </div>
+      </div>
+      <div class="strip-item fade-in">
+        <span class="strip-icon">↩️</span>
+        <div>
+          <strong>Easy Returns</strong>
+          <p>30-day no-hassle policy</p>
+        </div>
+      </div>
+      <div class="strip-item fade-in">
+        <span class="strip-icon">🧵</span>
+        <div>
+          <strong>Handwoven</strong>
+          <p>By skilled artisans</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collections Section -->
+  <section class="collections" id="collections">
+    <div class="section-header fade-in">
+      <span class="section-tag">Our Collections</span>
+      <h2>Find Your Perfect Blanket</h2>
+      <p>Four distinct collections crafted for every mood, season, and space.</p>
+    </div>
+    <div class="collections-grid">
+      <div class="collection-card large fade-in">
+        <img src="https://picsum.photos/seed/blanket-winter/800/600" alt="Winter Warmth Collection"/>
+        <div class="collection-overlay">
+          <span class="collection-tag">Bestseller</span>
+          <h3>Winter Warmth</h3>
+          <p>Heavyweight fleece for the coldest nights</p>
+          <a href="#shop" class="btn btn-white">Explore →</a>
+        </div>
+      </div>
+      <div class="collection-card fade-in">
+        <img src="https://picsum.photos/seed/blanket-linen/600/500" alt="Summer Breeze Collection"/>
+        <div class="collection-overlay">
+          <h3>Summer Breeze</h3>
+          <p>Breathable linen weaves</p>
+          <a href="#shop" class="btn btn-white">Explore →</a>
+        </div>
+      </div>
+      <div class="collection-card fade-in">
+        <img src="https://picsum.photos/seed/blanket-kids/600/500" alt="Little Dreams Collection"/>
+        <div class="collection-overlay">
+          <span class="collection-tag new">New</span>
+          <h3>Little Dreams</h3>
+          <p>Gentle blankets for tiny hands</p>
+          <a href="#shop" class="btn btn-white">Explore →</a>
+        </div>
+      </div>
+      <div class="collection-card fade-in">
+        <img src="https://picsum.photos/seed/blanket-luxury/600/500" alt="Luxe Series"/>
+        <div class="collection-overlay">
+          <span class="collection-tag">Premium</span>
+          <h3>Luxe Series</h3>
+          <p>Cashmere-blend for true indulgence</p>
+          <a href="#shop" class="btn btn-white">Explore →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop / Products Section -->
+  <section class="shop" id="shop">
+    <div class="section-header fade-in">
+      <span class="section-tag">Featured Products</span>
+      <h2>Shop Our Favorites</h2>
+      <p>Curated bestsellers loved by thousands of cozy homes.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card fade-in">
+        <div class="product-image-wrap">
+          <img class="product-img" src="https://picsum.photos/seed/blanket-blue/600/500" alt="Azure Dreams Blanket"/>
+          <span class="product-badge">Bestseller</span>
+          <div class="product-actions-hover">
+            <button class="quick-view">Quick View</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta">
+            <span class="product-collection">Winter Warmth</span>
+            <div class="product-rating">★★★★★ <span>(312)</span></div>
+          </div>
+          <h3 class="product-name">Azure Dreams</h3>
+          <p class="product-desc">Ultra-soft merino blend with cloud-like weight</p>
+          <div class="product-swatches">
+            <button class="swatch active" data-color="#D0E8F5" data-seed="blanket-blue" style="background:#D0E8F5" title="Sky Blue"></button>
+            <button class="swatch" data-color="#F0F4FF" data-seed="blanket-white" style="background:#F0F4FF" title="Pearl White"></button>
+            <button class="swatch" data-color="#B8D4E8" data-seed="blanket-navy" style="background:#3A6EA5" title="Deep Navy"></button>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">$89 <del>$120</del></span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fade-in">
+        <div class="product-image-wrap">
+          <img class="product-img" src="https://picsum.photos/seed/blanket-cream/600/500" alt="Cloud Nine Blanket"/>
+          <span class="product-badge new">New Arrival</span>
+          <div class="product-actions-hover">
+            <button class="quick-view">Quick View</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta">
+            <span class="product-collection">Luxe Series</span>
+            <div class="product-rating">★★★★★ <span>(198)</span></div>
+          </div>
+          <h3 class="product-name">Cloud Nine</h3>
+          <p class="product-desc">100% cashmere with hand-knotted fringe detail</p>
+          <div class="product-swatches">
+            <button class="swatch active" data-color="#FAF7F2" data-seed="blanket-cream" style="background:#FAF7F2" title="Cream"></button>
+            <button class="swatch" data-color="#E8F0F7" data-seed="blanket-frost" style="background:#E8F0F7" title="Frost Blue"></button>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">$165</span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fade-in">
+        <div class="product-image-wrap">
+          <img class="product-img" src="https://picsum.photos/seed/blanket-knit/600/500" alt="Nordic Knit Blanket"/>
+          <div class="product-actions-hover">
+            <button class="quick-view">Quick View</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta">
+            <span class="product-collection">Winter Warmth</span>
+            <div class="product-rating">★★★★☆ <span>(87)</span></div>
+          </div>
+          <h3 class="product-name">Nordic Knit</h3>
+          <p class="product-desc">Chunky hand-knit throw with Scandinavian pattern</p>
+          <div class="product-swatches">
+            <button class="swatch active" data-color="#E0ECF4" data-seed="blanket-knit" style="background:#E0ECF4" title="Ice Blue"></button>
+            <button class="swatch" data-color="#F5F5F5" data-seed="blanket-knit-grey" style="background:#F5F5F5" title="Grey Mist"></button>
+            <button class="swatch" data-color="#2C5F8A" data-seed="blanket-knit-dark" style="background:#2C5F8A" title="Midnight"></button>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">$110 <del>$140</del></span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fade-in">
+        <div class="product-image-wrap">
+          <img class="product-img" src="https://picsum.photos/seed/blanket-baby/600/500" alt="Petal Soft Blanket"/>
+          <span class="product-badge">Gift Favorite</span>
+          <div class="product-actions-hover">
+            <button class="quick-view">Quick View</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-meta">
+            <span class="product-collection">Little Dreams</span>
+            <div class="product-rating">★★★★★ <span>(445)</span></div>
+          </div>
+          <h3 class="product-name">Petal Soft</h3>
+          <p class="product-desc">Hypoallergenic bamboo blend, OEKO-TEX certified</p>
+          <div class="product-swatches">
+            <button class="swatch active" data-color="#DCE9F5" data-seed="blanket-baby" style="background:#DCE9F5" title="Baby Blue"></button>
+            <button class="swatch" data-color="#FDF0F5" data-seed="blanket-baby-pink" style="background:#FDF0F5" title="Blush"></button>
+            <button class="swatch" data-color="#F0F7EC" data-seed="blanket-baby-green" style="background:#F0F7EC" title="Sage"></button>
+          </div>
+          <div class="product-footer">
+            <span class="product-price">$65</span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="shop-cta fade-in">
+      <a href="#" class="btn btn-outline">View All Products</a>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section fade-in">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number" data-target="4800" data-suffix="+">0</span>
+        <span class="stat-label">Happy Customers</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="12" data-suffix=" yrs">0</span>
+        <span class="stat-label">Years of Craft</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="32" data-suffix="">0</span>
+        <span class="stat-label">Artisan Partners</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="98" data-suffix="%">0</span>
+        <span class="stat-label">5-Star Reviews</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Story Section -->
+  <section class="about" id="about">
+    <div class="about-image fade-in">
+      <img src="https://picsum.photos/seed/blanket-artisan/700/800" alt="Our artisans at work"/>
+      <div class="about-badge">
+        <span>Est.</span>
+        <strong>2012</strong>
+      </div>
+    </div>
+    <div class="about-content fade-in">
+      <span class="section-tag">Our Story</span>
+      <h2>Woven with Care,<br/><em>Made to Last</em></h2>
+      <p class="about-lead">Cloudweave was born from one simple belief: comfort should never compromise conscience.</p>
+      <p>Every blanket begins its journey with artisans in mountain villages, where generations of weaving knowledge meet ethically sourced fibers. We partner directly with 32 small-batch weavers across New England and the Pacific Northwest.</p>
+      <p>Our commitment to sustainable craft means slower production, fewer pieces — and a blanket you'll pass down for decades.</p>
+      <div class="about-values">
+        <div class="value-item">
+          <span class="value-icon">🌱</span>
+          <div>
+            <strong>Sustainably Sourced</strong>
+            <p>All materials certified organic or recycled</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <span class="value-icon">🤝</span>
+          <div>
+            <strong>Fair Trade Weavers</strong>
+            <p>Artisans paid 3× industry standard wages</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <span class="value-icon">♻️</span>
+          <div>
+            <strong>Zero Waste Packaging</strong>
+            <p>100% compostable wrapping & shipping</p>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn btn-primary">Learn More About Us</a>
+    </div>
+  </section>
+
+  <!-- Lifestyle / Lookbook Section -->
+  <section class="lookbook">
+    <div class="section-header fade-in">
+      <span class="section-tag">Lookbook</span>
+      <h2>Made for Every Moment</h2>
+    </div>
+    <div class="lookbook-grid">
+      <div class="lookbook-item tall fade-in">
+        <img src="https://picsum.photos/seed/cozy-reading/500/700" alt="Reading with blanket"/>
+        <div class="lookbook-label">Sunday Mornings</div>
+      </div>
+      <div class="lookbook-item fade-in">
+        <img src="https://picsum.photos/seed/cozy-fireplace/500/400" alt="By the fireplace"/>
+        <div class="lookbook-label">By the Fire</div>
+      </div>
+      <div class="lookbook-item fade-in">
+        <img src="https://picsum.photos/seed/cozy-outdoor/500/400" alt="Outdoor cozy"/>
+        <div class="lookbook-label">Outdoor Cozy</div>
+      </div>
+      <div class="lookbook-item fade-in">
+        <img src="https://picsum.photos/seed/cozy-bed/500/400" alt="Bedroom styling"/>
+        <div class="lookbook-label">Bedroom Dreams</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-header fade-in">
+      <span class="section-tag">Customer Love</span>
+      <h2>What Our Community Says</h2>
+    </div>
+    <div class="carousel-wrapper fade-in">
+      <button class="carousel-prev" aria-label="Previous">&#8592;</button>
+      <div class="carousel-track">
+
+        <div class="testimonial-slide active">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"I've never owned a blanket this soft. The Azure Dreams is the first thing I reach for every single evening. Worth every penny — and then some."</blockquote>
+            <div class="reviewer">
+              <img src="https://picsum.photos/seed/reviewer1/60/60" alt="Sarah M."/>
+              <div>
+                <strong>Sarah M.</strong>
+                <span>Portland, OR · Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Ordered the Petal Soft for my newborn and I honestly cried when it arrived. The quality is stunning. It's become our most-used baby item by far."</blockquote>
+            <div class="reviewer">
+              <img src="https://picsum.photos/seed/reviewer2/60/60" alt="Emily R."/>
+              <div>
+                <strong>Emily R.</strong>
+                <span>Austin, TX · Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"The packaging alone made me feel like I was receiving a luxury gift. The Cloud Nine cashmere is unbelievable — I bought one for every room. No regrets."</blockquote>
+            <div class="reviewer">
+              <img src="https://picsum.photos/seed/reviewer3/60/60" alt="James K."/>
+              <div>
+                <strong>James K.</strong>
+                <span>New York, NY · Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"I'm obsessed with the Nordic Knit. It's exactly what I imagined for our cabin. Got so many compliments from guests — I've had to order two more as gifts!"</blockquote>
+            <div class="reviewer">
+              <img src="https://picsum.photos/seed/reviewer4/60/60" alt="Laura T."/>
+              <div>
+                <strong>Laura T.</strong>
+                <span>Denver, CO · Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-next" aria-label="Next">&#8594;</button>
+    </div>
+    <div class="carousel-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- Press / As Seen In -->
+  <section class="press fade-in">
+    <p class="press-label">As Seen In</p>
+    <div class="press-logos">
+      <span>Architectural Digest</span>
+      <span>Real Simple</span>
+      <span>Better Homes</span>
+      <span>The Strategist</span>
+      <span>Vogue Living</span>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter" id="contact">
+    <div class="newsletter-inner fade-in">
+      <span class="newsletter-icon">✉️</span>
+      <h2>Join the Cloudweave Circle</h2>
+      <p>Get early access to new collections, exclusive discounts, and cozy living inspiration delivered monthly.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required/>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-note">No spam, ever. Unsubscribe anytime. 🤍</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-icon">☁</span>
+          <span class="logo-text">Cloudweave</span>
+        </a>
+        <p>Premium blankets crafted with intention for the homes and humans we love.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Pinterest">📌</a>
+          <a href="#" aria-label="Facebook">💙</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">All Blankets</a></li>
+            <li><a href="#">Winter Warmth</a></li>
+            <li><a href="#">Luxe Series</a></li>
+            <li><a href="#">Little Dreams</a></li>
+            <li><a href="#">Gift Cards</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Artisan Partners</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Care Guide</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Cloudweave. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+      <div class="payment-icons">
+        <span>Visa</span>
+        <span>MC</span>
+        <span>Amex</span>
+        <span>PayPal</span>
+        <span>Apple Pay</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
