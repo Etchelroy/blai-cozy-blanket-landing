@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CozyNest — Premium Blankets for Every Moment</title>
+  <meta name="description" content="CozyNest crafts ultra-soft, sustainably made blankets that turn any space into your favourite place. Shop our curated collection today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="#hero" class="logo" aria-label="CozyNest Home">
+        <span class="logo-icon">🧣</span>
+        <span class="logo-text">CozyNest</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#collections" class="nav-link">Collections</a>
+        <a href="#features"    class="nav-link">Why Us</a>
+        <a href="#testimonials" class="nav-link">Stories</a>
+        <a href="#newsletter"  class="nav-link">Newsletter</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#collections" class="btn btn-sm btn-primary">Shop Now</a>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6"  x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+      <a href="#collections"  class="nav-link">Collections</a>
+      <a href="#features"     class="nav-link">Why Us</a>
+      <a href="#testimonials" class="nav-link">Stories</a>
+      <a href="#newsletter"   class="nav-link">Newsletter</a>
+      <a href="#collections"  class="btn btn-primary mt-8">Shop Now</a>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" class="hero" aria-label="Hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in-up">
+      <p class="hero-eyebrow">New Winter Collection</p>
+      <h1 class="hero-heading">
+        Wrap Yourself<br />in Pure<em> Comfort</em>
+      </h1>
+      <p class="hero-subtext">
+        Sustainably crafted blankets that transform every corner<br class="d-none-sm" />
+        of your home into the warmest place on earth.
+      </p>
+      <div class="hero-actions">
+        <a href="#collections" class="btn btn-primary btn-lg">Explore Collection</a>
+        <a href="#features"    class="btn btn-ghost  btn-lg">Our Story</a>
+      </div>
+      <div class="hero-trust">
+        <span>⭐⭐⭐⭐⭐</span>
+        <span>Loved by <strong>50,000+</strong> happy homes</span>
+      </div>
+    </div>
+    <div class="hero-image-wrap fade-in-up delay-200">
+      <img src="https://picsum.photos/seed/cozyblanket/720/820" alt="A person wrapped in a soft CozyNest blanket" class="hero-img" />
+      <div class="hero-badge">
+        <span class="hero-badge-label">Bestseller</span>
+        <span class="hero-badge-product">Cloud Knit Throw</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST BAR ===================== -->
+  <section class="trust-bar" aria-label="Trust signals">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item fade-in-up">
+          <span class="trust-icon">🌿</span>
+          <span>100% Sustainable Materials</span>
+        </div>
+        <div class="trust-item fade-in-up delay-100">
+          <span class="trust-icon">🚚</span>
+          <span>Free Shipping Over $75</span>
+        </div>
+        <div class="trust-item fade-in-up delay-200">
+          <span class="trust-icon">♻️</span>
+          <span>Carbon-Neutral Packaging</span>
+        </div>
+        <div class="trust-item fade-in-up delay-300">
+          <span class="trust-icon">🛡️</span>
+          <span>30-Day Cozy Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COLLECTIONS ===================== -->
+  <section id="collections" class="section section-light" aria-labelledby="collections-heading">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <p class="section-eyebrow">Curated For You</p>
+        <h2 id="collections-heading" class="section-title">Our Signature Collections</h2>
+        <p class="section-subtitle">Each blanket is a story — find the one that's yours.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Card 1 -->
+        <article class="product-card fade-in-up">
+          <div class="product-img-wrap">
+            <img src="https://picsum.photos/seed/cloudknit/600/600" alt="Cloud Knit Throw" class="product-img" />
+            <span class="product-badge">Bestseller</span>
+            <button class="product-wishlist" aria-label="Wishlist Cloud Knit Throw">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-meta">
+              <span class="product-category">Throws</span>
+              <div class="product-rating">★★★★★ <span>(312)</span></div>
+            </div>
+            <h3 class="product-name">Cloud Knit Throw</h3>
+            <p class="product-desc">Airy open-weave knit, impossibly light yet delightfully warm.</p>
+            <div class="product-swatches">
+              <button class="swatch active" data-seed="cloudknit"  style="background:#d0e8f5" aria-label="Sky Blue"></button>
+              <button class="swatch"        data-seed="whiteknit"  style="background:#f5f5f5" aria-label="Ivory"></button>
+              <button class="swatch"        data-seed="navyknit"   style="background:#1d3557" aria-label="Navy"></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$89<span class="product-price-old">$115</span></span>
+              <button class="btn btn-primary btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="product-card fade-in-up delay-100">
+          <div class="product-img-wrap">
+            <img src="https://picsum.photos/seed/velvetweave/600/600" alt="Velvet Weave Blanket" class="product-img" />
+            <span class="product-badge badge-new">New</span>
+            <button class="product-wishlist" aria-label="Wishlist Velvet Weave Blanket">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-meta">
+              <span class="product-category">Full Blankets</span>
+              <div class="product-rating">★★★★★ <span>(178)</span></div>
+            </div>
+            <h3 class="product-name">Velvet Weave Blanket</h3>
+            <p class="product-desc">Sumptuous double-sided velvet for the ultimate indulgence.</p>
+            <div class="product-swatches">
+              <button class="swatch active" data-seed="velvetweave" style="background:#a8d4f5" aria-label="Azure"></button>
+              <button class="swatch"        data-seed="velvetcream" style="background:#faf0e6" aria-label="Cream"></button>
+              <button class="swatch"        data-seed="velvetgrey"  style="background:#b0bec5" aria-label="Silver"></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$129</span>
+              <button class="btn btn-primary btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="product-card fade-in-up delay-200">
+          <div class="product-img-wrap">
+            <img src="https://picsum.photos/seed/merino/600/600" alt="Merino Wool Blanket" class="product-img" />
+            <button class="product-wishlist" aria-label="Wishlist Merino Wool Blanket">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-meta">
+              <span class="product-category">Luxury</span>
+              <div class="product-rating">★★★★☆ <span>(94)</span></div>
+            </div>
+            <h3 class="product-name">Merino Wool Blanket</h3>
+            <p class="product-desc">Premium traceable merino for year-round comfort.</p>
+            <div class="product-swatches">
+              <button class="swatch active" data-seed="merino"      style="background:#e3f0fb" aria-label="Pale Blue"></button>
+              <button class="swatch"        data-seed="merinowhite" style="background:#fffffe" aria-label="White"></button>
+              <button class="swatch"        data-seed="merinotan"   style="background:#d9c4a1" aria-label="Oat"></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$165</span>
+              <button class="btn btn-primary btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="product-card fade-in-up delay-300">
+          <div class="product-img-wrap">
+            <img src="https://picsum.photos/seed/waffle/600/600" alt="Waffle Cotton Throw" class="product-img" />
+            <span class="product-badge badge-sale">25% Off</span>
+            <button class="product-wishlist" aria-label="Wishlist Waffle Cotton Throw">♡</button>
+          </div>
+          <div class="product-info">
+            <div class="product-meta">
+              <span class="product-category">Throws</span>
+              <div class="product-rating">★★★★★ <span>(256)</span></div>
+            </div>
+            <h3 class="product-name">Waffle Cotton Throw</h3>
+            <p class="product-desc">Textured waffle weave — light, breathable, endlessly charming.</p>
+            <div class="product-swatches">
+              <button class="swatch active" data-seed="waffle"      style="background:#cce4f7" aria-label="Mist"></button>
+              <button class="swatch"        data-seed="wafflecream" style="background:#f9f4ef" aria-label="Linen"></button>
+              <button class="swatch"        data-seed="wafflesage"  style="background:#b2c9b5" aria-label="Sage"></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$67<span class="product-price-old">$89</span></span>
+              <button class="btn btn-primary btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center fade-in-up mt-48">
+        <a href="#" class="btn btn-outline btn-lg">View All Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section id="features" class="section section-blue" aria-labelledby="features-heading">
+    <div class="container">
+      <div class="features-layout">
+
+        <div class="features-image-col fade-in-up">
+          <img src="https://picsum.photos/seed/cozyhome/680/780" alt="Cozy living room with CozyNest blanket" class="features-img" />
+          <div class="features-img-card">
+            <p class="features-img-card-stat"><span class="counter" data-target="50000">0</span>+</p>
+            <p class="features-img-card-label">Happy Homes</p>
+          </div>
+        </div>
+
+        <div class="features-text-col">
+          <p class="section-eyebrow fade-in-up">Why CozyNest</p>
+          <h2 id="features-heading" class="section-title fade-in-up">Crafted with Intention,<br/>Made to Last</h2>
+          <p class="section-subtitle fade-in-up">
+            Every thread is chosen for its softness, durability, and minimal environmental footprint.
+            We believe comfort shouldn't come at the planet's expense.
+          </p>
+
+          <div class="features-list">
+            <div class="feature-item fade-in-up">
+              <div class="feature-icon-wrap">🌾</div>
+              <div>
+                <h3>Sustainably Sourced Fibers</h3>
+                <p>All materials are certified OEKO-TEX® and sourced from ethical farms that prioritise animal welfare.</p>
+              </div>
+            </div>
+            <div class="feature-item fade-in-up delay-100">
+              <div class="feature-icon-wrap">🧵</div>
+              <div>
+                <h3>Artisan Construction</h3>
+                <p>Each blanket is knitted by skilled artisans in small batches — never rushed, always refined.</p>
+              </div>
+            </div>
+            <div class="feature-item fade-in-up delay-200">
+              <div class="feature-icon-wrap">🌊</div>
+              <div>
+                <h3>Low-Impact Dyeing</h3>
+                <p>Our signature blue palette uses water-saving, plant-based dyes that stay vibrant wash after wash.</p>
+              </div>
+            </div>
+            <div class="feature-item fade-in-up delay-300">
+              <div class="feature-icon-wrap">📦</div>
+              <div>
+                <h3>Plastic-Free Packaging</h3>
+                <p>Your blanket arrives gift-ready in 100% recycled, compostable packaging — no plastic, ever.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="features-cta fade-in-up delay-400">
+            <a href="#collections" class="btn btn-primary btn-lg">Shop the Collection</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <section class="section section-white stats-section" aria-label="Statistics">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item fade-in-up">
+          <p class="stat-number"><span class="counter" data-target="50000">0</span>+</p>
+          <p class="stat-label">Blankets Sold</p>
+        </div>
+        <div class="stat-item fade-in-up delay-100">
+          <p class="stat-number"><span class="counter" data-target="98">0</span>%</p>
+          <p class="stat-label">5-Star Reviews</p>
+        </div>
+        <div class="stat-item fade-in-up delay-200">
+          <p class="stat-number"><span class="counter" data-target="12">0</span></p>
+          <p class="stat-label">Signature Styles</p>
+        </div>
+        <div class="stat-item fade-in-up delay-300">
+          <p class="stat-number"><span class="counter" data-target="30">0</span>-Day</p>
+          <p class="stat-label">Cozy Guarantee</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LIFESTYLE GRID ===================== -->
+  <section class="section section-light lifestyle-section" aria-label="Lifestyle imagery">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <p class="section-eyebrow">The CozyNest Life</p>
+        <h2 class="section-title">Made for Every Moment</h2>
+      </div>
+      <div class="lifestyle-grid">
+        <div class="lifestyle-cell lifestyle-cell-tall fade-in-up">
+          <img src="https://picsum.photos/seed/morningcoffee/600/800" alt="Morning coffee with blanket" />
+          <div class="lifestyle-overlay"><p>Morning Rituals</p></div>
+        </div>
+        <div class="lifestyle-cell fade-in-up delay-100">
+          <img src="https://picsum.photos/seed/readingcozy/600/400" alt="Reading wrapped in blanket" />
+          <div class="lifestyle-overlay"><p>Quiet Reading</p></div>
+        </div>
+        <div class="lifestyle-cell fade-in-up delay-200">
+          <img src="https://picsum.photos/seed/familywarm/600/400" alt="Family wrapped in blankets" />
+          <div class="lifestyle-overlay"><p>Family Time</p></div>
+        </div>
+        <div class="lifestyle-cell lifestyle-cell-wide fade-in-up delay-300">
+          <img src="https://picsum.photos/seed/outdoorpicnic/900/420" alt="Outdoor picnic with throw" />
+          <div class="lifestyle-overlay"><p>Weekend Escapes</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section id="testimonials" class="section section-blue testimonials-section" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <p class="section-eyebrow">Real Stories</p>
+        <h2 id="testimonials-heading" class="section-title">Loved by Cozy People Everywhere</h2>
+      </div>
+
+      <div class="testimonial-slider fade-in-up">
+        <button id="testimonial-prev" class="testimonial-arrow testimonial-arrow-prev" aria-label="Previous testimonial">&#8592;</button>
+        <div class="testimonial-viewport">
+          <div id="testimonial-track" class="testimonial-track">
+
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <img src="https://picsum.photos/seed/personamy/80/80" alt="Amy R." class="testimonial-avatar" />
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote class="testimonial-quote">
+                  "I bought the Cloud Knit Throw on a whim and it's become my most prized possession.
+                  Softer than anything I've owned and it's survived two years of weekly washing perfectly."
+                </blockquote>
+                <p class="testimonial-author">Amy R. — <em>Seattle, WA</em></p>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <img src="https://picsum.photos/seed/personmark/80/80" alt="Mark T." class="testimonial-avatar" />
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote class="testimonial-quote">
+                  "Gifted the Merino Wool Blanket to my mum for Christmas and she calls it 'a hug in blanket form'.
+                  Packaging was absolutely beautiful too — no plastic anywhere."
+                </blockquote>
+                <p class="testimonial-author">Mark T. — <em>Austin, TX</em></p>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <img src="https://picsum.photos/seed/personpriya/80/80" alt="Priya S." class="testimonial-avatar" />
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote class="testimonial-quote">
+                  "The Velvet Weave is next-level luxury. I've been asked by every single guest what
+                  brand it is. CozyNest has a customer for life."
+                </blockquote>
+                <p class="testimonial-author">Priya S. — <em>Brooklyn, NY</em></p>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <img src="https://picsum.photos/seed/personjake/80/80" alt="Jake O." class="testimonial-avatar" />
+                <div class="testimonial-stars">★★★★★</div>
+                <blockquote class="testimonial-quote">
+                  "Ordered three Waffle Cotton Throws for our Airbnb and guests mention them in
+                  every single review. Best investment we've made for the space."
+                </blockquote>
+                <p class="testimonial-author">Jake O. — <em>Denver, CO</em></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button id="testimonial-next" class="testimonial-arrow testimonial-arrow-next" aria-label="Next testimonial">&#8594;</button>
+      </div>
+
+      <div class="testimonial-dots fade-in-up">
+        <button class="testimonial-dot active" aria-label="Slide 1"></button>
+        <button class="testimonial-dot"        aria-label="Slide 2"></button>
+        <button class="testimonial-dot"        aria-label="Slide 3"></button>
+        <button class="testimonial-dot"        aria-label="Slide 4"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NEWSLETTER ===================== -->
+  <section id="newsletter" class="section section-white newsletter-section" aria-labelledby="newsletter-heading">
+    <div class="container">
+      <div class="newsletter-inner fade-in-up">
+        <img src="https://picsum.photos/seed/newslettercozy/560/400" alt="Cozy blanket detail" class="newsletter-img" />
+        <div class="newsletter-content">
+          <p class="section-eyebrow">Join the Nest</p>
+          <h2 id="newsletter-heading" class="section-title">Get 15% Off Your First Order</h2>
+          <p class="section-subtitle">
+            Subscribe for exclusive drops, seasonal styling tips, and member-only offers.
+            No fluff — only warmth.
+          </p>
+          <form id="newsletter-form" class="newsletter-form" novalidate>
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <p id="newsletter-msg" class="newsletter-msg" role="alert" style="display:none"></p>
+            <p class="newsletter-fine">We respect your privacy. Unsubscribe anytime.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+            <span class="logo-icon">🧣</span>
+            <span class="logo-text">CozyNest</span>
+          </a>
+          <p class="footer-tagline">Making every corner your favourite place since 2018.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="Pinterest" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.852 0 1.265.64 1.265 1.408 0 .858-.546 2.14-.828 3.33-.236.995.498 1.806 1.476 1.806 1.771 0 3.133-1.867 3.133-4.563 0-2.386-1.716-4.054-4.165-4.054-2.837 0-4.5 2.127-4.5 4.327 0 .857.33 1.776.741 2.279a.3.3 0 0 1 .069.283c-.076.313-.244.995-.277 1.134-.044.183-.146.222-.337.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">Throws</a></li>
+            <li><a href="#">Full Blankets</a></li>
+            <li><a href="#">Luxury Range</a></li>
+            <li><a href="#">Gift Sets</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Care Guide</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Track Order</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 CozyNest. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== STICKY CTA BAR ===================== -->
+  <div id="sticky-cta" class="sticky-cta" role="complementary" aria-label="Sticky offer bar">
+    <p>☁️ <strong>New Cloud Knit Throw</strong> — limited stock. <a href="#collections">Shop Now →</a></p>
+    <button class="sticky-cta-close" onclick="this.parentElement.remove()" aria-label="Dismiss">✕</button>
+  </div>
+
+  <!-- ===================== SCROLL TO TOP ===================== -->
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
