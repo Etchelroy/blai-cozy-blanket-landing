@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Haven & Wool — Wrap Yourself in Pure Comfort</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">HAVEN &amp; WOOL</a>
+      <ul class="nav-links">
+        <li><a href="#products">Collection</a></li>
+        <li><a href="#features">Why Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#newsletter">Gifts</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <a href="#products" class="btn-primary nav-cta">Shop Now</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#products">Collection</a>
+      <a href="#features">Why Us</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#newsletter">Gifts</a>
+      <a href="#products" class="btn-primary">Shop Now</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════ HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-eyebrow">New Autumn Collection 2024</span>
+        <h1 class="hero-headline">Wrap Yourself<br/>in Pure<br/><em>Comfort</em></h1>
+        <p class="hero-sub">Handcrafted blankets woven from the world's finest merino wool and cashmere blends — made to be lived in, loved, and passed down.</p>
+        <div class="hero-ctas">
+          <a href="#products" class="btn-primary btn-large">Explore Collection</a>
+          <a href="#features" class="btn-outline btn-large">Our Craft</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">12K+</span><span class="stat-label">Happy Homes</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Avg. Rating</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Natural Fibers</span></div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-img-wrap">
+          <img src="https://picsum.photos/seed/cozy-blanket-wool/780/900" alt="Cozy Haven & Wool blanket draped over a sofa" />
+          <div class="hero-img-badge">
+            <span class="badge-icon">✦</span>
+            <span>Free Shipping<br/>Over $75</span>
+          </div>
+          <div class="hero-img-tag">
+            <img src="https://picsum.photos/seed/wool-texture-swatch/56/56" alt="swatch"/>
+            <div>
+              <strong>Merino Cloud</strong>
+              <span>Ivory / $189</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-container">
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A6FBF" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+        <span>Free returns within 60 days</span>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A6FBF" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Certified organic materials</span>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A6FBF" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span>Ships in 2–3 business days</span>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A6FBF" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span>1% donated to reforestation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ PRODUCTS -->
+  <section class="products" id="products">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">The Collection</span>
+        <h2 class="section-title">Find Your Perfect Wrap</h2>
+        <p class="section-sub">Every blanket is a conversation between artisan tradition and modern comfort.</p>
+      </div>
+      <div class="product-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="throw">Throws</button>
+        <button class="filter-btn" data-filter="oversized">Oversized</button>
+        <button class="filter-btn" data-filter="weighted">Weighted</button>
+      </div>
+      <div class="products-grid">
+
+        <div class="product-card reveal" data-category="throw">
+          <div class="product-img-wrap">
+            <img src="https://picsum.photos/seed/merino-ivory-blanket/480/560" alt="Merino Cloud Throw in Ivory"/>
+            <div class="product-badge">Bestseller</div>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+            <div class="product-overlay">
+              <button class="btn-primary add-to-cart" data-name="Merino Cloud Throw" data-price="189">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-swatches">
+              <span class="swatch" style="background:#F5F0E8" title="Ivory"></span>
+              <span class="swatch" style="background:#C4B5A0" title="Linen"></span>
+              <span class="swatch" style="background:#8BA7C7" title="Mist Blue"></span>
+              <span class="swatch" style="background:#2C3E50" title="Navy"></span>
+            </div>
+            <h3 class="product-name">Merino Cloud Throw</h3>
+            <p class="product-desc">100% fine merino — buttery soft, naturally temperature-regulating.</p>
+            <div class="product-footer">
+              <span class="product-price">$189</span>
+              <div class="product-stars">★★★★★ <span>(342)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="oversized">
+          <div class="product-img-wrap">
+            <img src="https://picsum.photos/seed/cashmere-blue-large/480/560" alt="Cashmere Dream Oversized in Slate Blue"/>
+            <div class="product-badge new-badge">New</div>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+            <div class="product-overlay">
+              <button class="btn-primary add-to-cart" data-name="Cashmere Dream Oversized" data-price="289">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-swatches">
+              <span class="swatch" style="background:#4A7BAF" title="Slate Blue"></span>
+              <span class="swatch" style="background:#7B9E87" title="Sage"></span>
+              <span class="swatch" style="background:#C9A96E" title="Caramel"></span>
+            </div>
+            <h3 class="product-name">Cashmere Dream Oversized</h3>
+            <p class="product-desc">Sumptuous cashmere blend, 72"×90" — couch, bed, or anywhere in between.</p>
+            <div class="product-footer">
+              <span class="product-price">$289</span>
+              <div class="product-stars">★★★★★ <span>(218)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="weighted">
+          <div class="product-img-wrap">
+            <img src="https://picsum.photos/seed/weighted-knit-blanket/480/560" alt="Gravity Knit Weighted Blanket"/>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+            <div class="product-overlay">
+              <button class="btn-primary add-to-cart" data-name="Gravity Knit Weighted" data-price="249">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-swatches">
+              <span class="swatch" style="background:#0D2B4E" title="Midnight"></span>
+              <span class="swatch" style="background:#8BA7C7" title="Sky"></span>
+              <span class="swatch" style="background:#D4C5B0" title="Sand"></span>
+            </div>
+            <h3 class="product-name">Gravity Knit Weighted</h3>
+            <p class="product-desc">15 lb weighted comfort in a chunky, open-weave merino knit. Sleep deeper.</p>
+            <div class="product-footer">
+              <span class="product-price">$249</span>
+              <div class="product-stars">★★★★☆ <span>(175)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="throw">
+          <div class="product-img-wrap">
+            <img src="https://picsum.photos/seed/lambswool-plaid-throw/480/560" alt="Highland Plaid Lambswool Throw"/>
+            <div class="product-badge limited-badge">Limited</div>
+            <button class="product-wishlist" aria-label="Wishlist">♡</button>
+            <div class="product-overlay">
+              <button class="btn-primary add-to-cart" data-name="Highland Plaid Lambswool" data-price="159">Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-swatches">
+              <span class="swatch" style="background:#1A6FBF" title="Royal Blue"></span>
+              <span class="swatch" style="background:#8B4513" title="Russet"></span>
+              <span class="swatch" style="background:#2E4A2E" title="Forest"></span>
+            </div>
+            <h3 class="product-name">Highland Plaid Lambswool</h3>
+            <p class="product-desc">Classic tartan woven in Scotland. Heritage craftsmanship for modern living.</p>
+            <div class="product-footer">
+              <span class="product-price">$159</span>
+              <div class="product-stars">★★★★★ <span>(97)</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="products-cta reveal">
+        <a href="#" class="btn-outline btn-large">View Full Collection →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ LIFESTYLE BANNER -->
+  <section class="lifestyle-banner">
+    <div class="lifestyle-overlay"></div>
+    <img src="https://picsum.photos/seed/cozy-home-interior-sofa/1400/600" alt="Cozy living room with Haven & Wool blankets" class="lifestyle-bg"/>
+    <div class="lifestyle-content reveal">
+      <span class="lifestyle-eyebrow">The Haven Life</span>
+      <h2>"There is no place more<br/>delightful than home."</h2>
+      <p>— Marcus Tullius Cicero</p>
+      <a href="#products" class="btn-primary btn-large">Shop the Look</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FEATURES -->
+  <section class="features" id="features">
+    <div class="section-container">
+      <div class="features-layout">
+        <div class="features-image reveal">
+          <div class="features-img-stack">
+            <img src="https://picsum.photos/seed/artisan-weaving-wool/520/640" alt="Artisan weaving wool blanket" class="feat-img-main"/>
+            <img src="https://picsum.photos/seed/sheep-merino-farm/280/200" alt="Merino sheep on organic farm" class="feat-img-secondary"/>
+            <div class="features-img-stat">
+              <strong>Since 1987</strong>
+              <span>Family-owned craft</span>
+            </div>
+          </div>
+        </div>
+        <div class="features-text">
+          <span class="section-eyebrow reveal">Our Promise</span>
+          <h2 class="section-title reveal">Crafted with<br/>Intention. Worn<br/>with <em>Love.</em></h2>
+          <div class="features-list">
+            <div class="feature-item reveal">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div class="feature-content">
+                <h4>Slow-Woven Process</h4>
+                <p>Each blanket takes 14+ hours to produce on heritage looms — never rushed, always refined.</p>
+              </div>
+            </div>
+            <div class="feature-item reveal">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <div class="feature-content">
+                <h4>Ethically Sourced Fibers</h4>
+                <p>We partner only with mulesing-free farms in New Zealand and the Scottish Highlands.</p>
+              </div>
+            </div>
+            <div class="feature-item reveal">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+              </div>
+              <div class="feature-content">
+                <h4>Carbon-Neutral Shipping</h4>
+                <p>100% of deliveries are offset through verified reforestation and renewable energy credits.</p>
+              </div>
+            </div>
+            <div class="feature-item reveal">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div class="feature-content">
+                <h4>Made to Last Generations</h4>
+                <p>A Haven & Wool blanket is designed to outlive trends — heirloom quality, for life.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Real Stories</span>
+        <h2 class="section-title">Wrapped in Words</h2>
+        <div class="overall-rating">
+          <span class="big-stars">★★★★★</span>
+          <strong>4.9 out of 5</strong>
+          <span>from 2,847 verified reviews</span>
+        </div>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal featured-testimonial">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">I bought the Merino Cloud throw for myself after debating for weeks. Within five minutes of opening the package, I'd ordered three more as Christmas gifts. It's genuinely the most beautiful, softest thing I own. Worth every single penny.</p>
+          <div class="testimonial-author">
+            <img src="https://picsum.photos/seed/woman-portrait-sarah/56/56" alt="Sarah M."/>
+            <div>
+              <strong>Sarah M.</strong>
+              <span>New York, NY · Verified Purchase</span>
+            </div>
+            <span class="testimonial-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">The Highland Plaid is everything a blanket should be. Heavy enough to feel substantial, light enough to not overheat. The craftsmanship is unreal — you can feel the quality the second you touch it.</p>
+          <div class="testimonial-author">
+            <img src="https://picsum.photos/seed/man-portrait-james/56/56" alt="James T."/>
+            <div>
+              <strong>James T.</strong>
+              <span>London, UK · Verified Purchase</span>
+            </div>
+            <span class="testimonial-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">My toddler has claimed the Cashmere Dream oversized as her own. I don't even fight it anymore. Safe to say our whole family is obsessed. We're now on our fourth Haven & Wool purchase.</p>
+          <div class="testimonial-author">
+            <img src="https://picsum.photos/seed/woman-portrait-elena/56/56" alt="Elena R."/>
+            <div>
+              <strong>Elena R.</strong>
+              <span>Portland, OR · Verified Purchase</span>
+            </div>
+            <span class="testimonial-stars">★★★★★</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Weighted blankets changed my sleep, but the Gravity Knit changed my life. It's therapeutic AND gorgeous — I leave it on my sofa during the day as a decor piece. Multiple guests have asked where to buy it.</p>
+          <div class="testimonial-author">
+            <img src="https://picsum.photos/seed/man-portrait-david/56/56" alt="David K."/>
+            <div>
+              <strong>David K.</strong>
+              <span>Austin, TX · Verified Purchase</span>
+            </div>
+            <span class="testimonial-stars">★★★★★</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="press-bar reveal">
+        <span class="press-label">As seen in</span>
+        <div class="press-logos">
+          <span class="press-logo">Architectural Digest</span>
+          <span class="press-logo">Vogue Living</span>
+          <span class="press-logo">The Sunday Times</span>
+          <span class="press-logo">House Beautiful</span>
+          <span class="press-logo">Forbes</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="newsletter-container reveal">
+      <div class="newsletter-decoration">
+        <div class="deco-circle deco-1"></div>
+        <div class="deco-circle deco-2"></div>
+      </div>
+      <div class="newsletter-content">
+        <span class="section-eyebrow" style="color:#8BA7C7">The Warm Welcome</span>
+        <h2>Join the Haven Community</h2>
+        <p>Subscribe for seasonal lookbooks, early access to new collections, care guides, and 15% off your first order.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <div class="form-row">
+            <input type="email" placeholder="Your email address" required aria-label="Email address"/>
+            <button type="submit" class="btn-primary">Claim 15% Off</button>
+          </div>
+          <p class="form-note">No spam, ever. Unsubscribe with one click.</p>
+        </form>
+        <div class="newsletter-success" id="newsletterSuccess">
+          <span>✦</span> Welcome to the family! Check your inbox for your discount code.
+        </div>
+      </div>
+      <div class="newsletter-image">
+        <img src="https://picsum.photos/seed/gift-wrapping-blanket-box/480/480" alt="Beautifully gift-wrapped Haven & Wool blanket box"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">HAVEN &amp; WOOL</a>
+        <p>Handcrafted blankets for extraordinary everyday moments. Family-owned since 1987.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest" class="social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.64 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.772 0 3.137-1.868 3.137-4.566 0-2.387-1.715-4.055-4.163-4.055-2.838 0-4.502 2.128-4.502 4.328 0 .858.33 1.775.741 2.276.082.1.094.186.07.286-.075.313-.243.995-.276 1.134-.044.183-.146.221-.337.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links-group">
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="#">Throws</a></li>
+          <li><a href="#">Oversized Blankets</a></li>
+          <li><a href="#">Weighted Collection</a></li>
+          <li><a href="#">Gift Sets</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Craftsmanship</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">Shipping &amp; Returns</a></li>
+          <li><a href="#">Care Instructions</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Haven &amp; Wool. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+      <div class="footer-payments">
+        <span class="payment-icon">VISA</span>
+        <span class="payment-icon">MC</span>
+        <span class="payment-icon">AMEX</span>
+        <span class="payment-icon">PAYPAL</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════ CART TOAST -->
+  <div class="cart-toast" id="cartToast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>
+    <span id="cartToastMsg">Item added to cart!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
