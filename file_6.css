@@ -789,3 +789,684 @@ blockquote {
    RESPONSIVE
 ════════════════════════════════════════════════════════ */
 @media (max-width: 1
+# filename: index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CloudNest — Premium Cozy Blankets</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ░░ NAV ░░ -->
+  <header class="nav-wrapper" id="navbar">
+    <nav class="nav-inner container">
+      <a href="#" class="nav-logo">
+        <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 26c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M2 26h32" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M10 26c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#93C5FD" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        CloudNest
+      </a>
+      <ul class="nav-links">
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#features">Why Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#about">Story</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-ghost nav-cart" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-badge">2</span>
+        </button>
+        <a href="#collections" class="btn-primary btn-sm">Shop Now</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="nav-mobile" id="mobileMenu">
+      <ul>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#features">Why Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#about">Story</a></li>
+      </ul>
+      <a href="#collections" class="btn-primary">Shop Now</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ░░ HERO ░░ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-text" data-animate="fade-up">
+          <span class="eyebrow">✦ New Winter Collection 2025</span>
+          <h1 class="hero-heading">
+            Wrap Yourself<br/>
+            in <em>Pure Comfort</em>
+          </h1>
+          <p class="hero-subtext">
+            Handcrafted premium blankets that transform any space into a sanctuary.
+            Ethically made, impossibly soft, endlessly cozy.
+          </p>
+          <div class="hero-ctas">
+            <a href="#collections" class="btn-primary btn-lg">Explore Collection</a>
+            <a href="#features" class="btn-outline btn-lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="play-icon">
+                <circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/>
+              </svg>
+              Our Story
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-num" data-count="50000">0</span><span class="stat-sym">+</span>
+              <span class="stat-label">Happy Customers</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num" data-count="4">0</span><span class="stat-sym">.9★</span>
+              <span class="stat-label">Average Rating</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num" data-count="30">0</span><span class="stat-sym">+</span>
+              <span class="stat-label">Unique Styles</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual" data-animate="fade-left">
+          <div class="hero-img-wrapper">
+            <img src="https://picsum.photos/seed/blanketcozy/680/780" alt="Cozy blanket lifestyle" class="hero-img" />
+            <div class="hero-badge">
+              <svg viewBox="0 0 24 24" fill="#2563EB"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <div>
+                <strong>Award Winning</strong>
+                <span>Best Home Brand 2024</span>
+              </div>
+            </div>
+            <div class="hero-floating-card">
+              <img src="https://picsum.photos/seed/avatar1/40/40" alt="Customer" class="fc-avatar"/>
+              <div class="fc-text">
+                <strong>Sarah M.</strong>
+                <span>Just ordered her 3rd blanket 🎉</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <div class="scroll-dot"></div>
+        <span>Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- ░░ TRUST BAR ░░ -->
+    <section class="trust-bar">
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span>Free Shipping Over $75</span>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>100% Organic Materials</span>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+          <span>Easy 60-Day Returns</span>
+        </div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <span>Ethically Sourced</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ COLLECTIONS ░░ -->
+    <section class="collections section-gap" id="collections">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="eyebrow">Our Products</span>
+          <h2 class="section-title">Find Your Perfect Blanket</h2>
+          <p class="section-sub">From ultra-plush throws to weighted wonders — every piece is made to become your favourite.</p>
+        </div>
+
+        <div class="filter-tabs" data-animate="fade-up">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="throw">Throws</button>
+          <button class="filter-btn" data-filter="weighted">Weighted</button>
+          <button class="filter-btn" data-filter="kids">Kids</button>
+          <button class="filter-btn" data-filter="outdoor">Outdoor</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+          <article class="product-card" data-category="throw" data-animate="fade-up">
+            <div class="product-img-wrap">
+              <img src="https://picsum.photos/seed/blanket1/500/600" alt="Cloud Fleece Throw" loading="lazy" />
+              <span class="product-tag tag-new">New</span>
+              <div class="product-overlay">
+                <button class="btn-overlay">Quick Add</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-top">
+                <h3>Cloud Fleece Throw</h3>
+                <div class="product-stars">★★★★★ <span>(124)</span></div>
+              </div>
+              <p class="product-desc">Ultra-soft microfibre fleece with a satin edge finish.</p>
+              <div class="product-bottom">
+                <div class="product-colors">
+                  <span class="color-dot" style="background:#BFDBFE" title="Sky Blue"></span>
+                  <span class="color-dot" style="background:#E0E7FF" title="Lavender"></span>
+                  <span class="color-dot active" style="background:#DBEAFE" title="Powder"></span>
+                </div>
+                <div class="product-price">
+                  <span class="price-old">$79</span>
+                  <span class="price-now">$59</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card featured-card" data-category="weighted" data-animate="fade-up">
+            <div class="product-img-wrap">
+              <img src="https://picsum.photos/seed/blanket2/500/600" alt="Gravity Comfort Weighted Blanket" loading="lazy" />
+              <span class="product-tag tag-best">Best Seller</span>
+              <div class="product-overlay">
+                <button class="btn-overlay">Quick Add</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-top">
+                <h3>Gravity Comfort Weighted</h3>
+                <div class="product-stars">★★★★★ <span>(312)</span></div>
+              </div>
+              <p class="product-desc">15lb deep-pressure therapy blanket with glass bead filling.</p>
+              <div class="product-bottom">
+                <div class="product-colors">
+                  <span class="color-dot active" style="background:#1D4ED8" title="Cobalt"></span>
+                  <span class="color-dot" style="background:#6B7280" title="Slate"></span>
+                  <span class="color-dot" style="background:#FEF3C7" title="Cream"></span>
+                </div>
+                <div class="product-price">
+                  <span class="price-now">$129</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="kids" data-animate="fade-up">
+            <div class="product-img-wrap">
+              <img src="https://picsum.photos/seed/blanket3/500/600" alt="Little Dreamers Kids Blanket" loading="lazy" />
+              <div class="product-overlay">
+                <button class="btn-overlay">Quick Add</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-top">
+                <h3>Little Dreamers Kids</h3>
+                <div class="product-stars">★★★★☆ <span>(89)</span></div>
+              </div>
+              <p class="product-desc">Hypoallergenic organic cotton, machine washable & cosy.</p>
+              <div class="product-bottom">
+                <div class="product-colors">
+                  <span class="color-dot" style="background:#FCA5A5" title="Blush"></span>
+                  <span class="color-dot active" style="background:#93C5FD" title="Baby Blue"></span>
+                  <span class="color-dot" style="background:#6EE7B7" title="Mint"></span>
+                </div>
+                <div class="product-price">
+                  <span class="price-now">$49</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="outdoor" data-animate="fade-up">
+            <div class="product-img-wrap">
+              <img src="https://picsum.photos/seed/blanket4/500/600" alt="Alpine Outdoor Blanket" loading="lazy" />
+              <span class="product-tag tag-sale">Sale</span>
+              <div class="product-overlay">
+                <button class="btn-overlay">Quick Add</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-top">
+                <h3>Alpine Outdoor Blanket</h3>
+                <div class="product-stars">★★★★★ <span>(67)</span></div>
+              </div>
+              <p class="product-desc">Waterproof-backed, windproof weave for campfire evenings.</p>
+              <div class="product-bottom">
+                <div class="product-colors">
+                  <span class="color-dot active" style="background:#166534" title="Forest"></span>
+                  <span class="color-dot" style="background:#92400E" title="Camel"></span>
+                  <span class="color-dot" style="background:#1E3A8A" title="Navy"></span>
+                </div>
+                <div class="product-price">
+                  <span class="price-old">$95</span>
+                  <span class="price-now">$69</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="throw" data-animate="fade-up">
+            <div class="product-img-wrap">
+              <img src="https://picsum.photos/seed/blanket5/500/600" alt="Velvet Knit Throw" loading="lazy" />
+              <div class="product-overlay">
+                <button class="btn-overlay">Quick Add</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-top">
+                <h3>Velvet Knit Throw</h3>
+                <div class="product-stars">★★★★★ <span>(201)</span></div>
+              </div>
+              <p class="product-desc">Chunky velvet knit with fringe edges. Sofa staple.</p>
+              <div class="product-bottom">
+                <div class="product-colors">
+                  <span class="color-dot" style="background:#7C3AED" title="Plum"></span>
+                  <span class="color-dot active" style="background:#2563EB" title="Blue"></span>
+                  <span class="color-dot" style="background:#F9FAFB" title="White"></span>
+                </div>
+                <div class="product-price">
+                  <span class="price-now">$85</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="weighted" data-animate="fade-up">
+            <div class="product-img-wrap">
+              <img src="https://picsum.photos/seed/blanket6/500/600" alt="Serenity Cool Weighted" loading="lazy" />
+              <span class="product-tag tag-new">New</span>
+              <div class="product-overlay">
+                <button class="btn-overlay">Quick Add</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-top">
+                <h3>Serenity Cool Weighted</h3>
+                <div class="product-stars">★★★★★ <span>(54)</span></div>
+              </div>
+              <p class="product-desc">Cooling bamboo cover with 12lb therapeutic weight.</p>
+              <div class="product-bottom">
+                <div class="product-colors">
+                  <span class="color-dot active" style="background:#BAE6FD" title="Ice"></span>
+                  <span class="color-dot" style="background:#E5E7EB" title="Mist"></span>
+                </div>
+                <div class="product-price">
+                  <span class="price-now">$119</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="collections-cta" data-animate="fade-up">
+          <a href="#" class="btn-outline btn-lg">View All 30+ Styles →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ FEATURES / WHY US ░░ -->
+    <section class="features section-gap" id="features">
+      <div class="container features-inner">
+        <div class="features-visual" data-animate="fade-right">
+          <div class="features-img-stack">
+            <img src="https://picsum.photos/seed/featuredblank/560/640" alt="Quality blanket detail" class="fi-main" />
+            <img src="https://picsum.photos/seed/blankettexture/260/300" alt="Texture close up" class="fi-small" />
+            <div class="fi-badge">
+              <span class="fi-badge-num">100%</span>
+              <span>Organic Cotton</span>
+            </div>
+          </div>
+        </div>
+        <div class="features-content" data-animate="fade-up">
+          <span class="eyebrow">Why CloudNest</span>
+          <h2 class="section-title">Crafted With<br/>Intention & Care</h2>
+          <p class="section-sub" style="text-align:left; max-width:460px;">
+            Every CloudNest blanket starts with ethically-sourced fibres, passes through artisan hands, and is finished with our signature softness guarantee.
+          </p>
+          <ul class="feature-list">
+            <li class="feature-item" data-animate="fade-up">
+              <div class="feature-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h4>OEKO-TEX Certified</h4>
+                <p>Free from 100+ harmful substances — safe for your whole family.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-animate="fade-up">
+              <div class="feature-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div>
+                <h4>Softness Guarantee</h4>
+                <p>Gets softer with every wash — or we replace it, no questions asked.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-animate="fade-up">
+              <div class="feature-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <div>
+                <h4>Fair Trade Weavers</h4>
+                <p>Our artisans earn living wages in certified, safe conditions.</p>
+              </div>
+            </li>
+            <li class="feature-item" data-animate="fade-up">
+              <div class="feature-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <div>
+                <h4>Carbon Neutral Shipping</h4>
+                <p>100% offset packaging & carbon-neutral delivery on every order.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ LIFESTYLE GALLERY ░░ -->
+    <section class="gallery section-gap" id="gallery">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="eyebrow">Life With CloudNest</span>
+          <h2 class="section-title">Made for Every Moment</h2>
+        </div>
+      </div>
+      <div class="gallery-grid" data-animate="fade-up">
+        <div class="gallery-item gi-tall">
+          <img src="https://picsum.photos/seed/lifestyle1/500/700" alt="Cozy reading nook" loading="lazy" />
+          <div class="gallery-overlay"><span>Morning Rituals</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/lifestyle2/500/400" alt="Couch cuddle" loading="lazy" />
+          <div class="gallery-overlay"><span>Family Evenings</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/lifestyle3/500/400" alt="Bedroom setup" loading="lazy" />
+          <div class="gallery-overlay"><span>Bedroom Sanctuary</span></div>
+        </div>
+        <div class="gallery-item gi-wide">
+          <img src="https://picsum.photos/seed/lifestyle4/900/400" alt="Outdoor porch" loading="lazy" />
+          <div class="gallery-overlay"><span>Outdoor Coziness</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ TESTIMONIALS ░░ -->
+    <section class="testimonials section-gap" id="testimonials">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="eyebrow">Real Reviews</span>
+          <h2 class="section-title">People Who Can't Stop Nesting</h2>
+        </div>
+
+        <div class="testimonial-carousel" data-animate="fade-up">
+          <div class="tcarousel-track" id="testimonialTrack">
+
+            <div class="testimonial-card active">
+              <div class="tc-stars">★★★★★</div>
+              <blockquote>"I bought the Cloud Fleece Throw during a sale and now I've ordered three more as gifts. Hands down the softest thing I've ever felt. My cat is also obsessed."</blockquote>
+              <div class="tc-author">
+                <img src="https://picsum.photos/seed/person1/56/56" alt="Emily R." />
+                <div>
+                  <strong>Emily R.</strong>
+                  <span>Verified Buyer · New York</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="tc-stars">★★★★★</div>
+              <blockquote>"The Gravity Comfort blanket genuinely changed my sleep. I fall asleep in 10 minutes now. My therapist even asked me what changed. My blanket. That's what changed."</blockquote>
+              <div class="tc-author">
+                <img src="https://picsum.photos/seed/person2/56/56" alt="James K." />
+                <div>
+                  <strong>James K.</strong>
+                  <span>Verified Buyer · Austin</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="tc-stars">★★★★★</div>
+              <blockquote>"Sustainable, gorgeous, and incredibly soft. I feel good about what I'm buying and that makes it even better. Packaging was zero-waste too. Love this brand."</blockquote>
+              <div class="tc-author">
+                <img src="https://picsum.photos/seed/person3/56/56" alt="Priya S." />
+                <div>
+                  <strong>Priya S.</strong>
+                  <span>Verified Buyer · London</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="tc-stars">★★★★★</div>
+              <blockquote>"My daughter calls hers her 'magic blanket'. It's machine-washable which as a parent is everything. Looks expensive, feels expensive, but actually reasonable for the quality."</blockquote>
+              <div class="tc-author">
+                <img src="https://picsum.photos/seed/person4/56/56" alt="Marcus W." />
+                <div>
+                  <strong>Marcus W.</strong>
+                  <span>Verified Buyer · Chicago</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="tcarousel-nav">
+            <button class="tc-prev" id="tcPrev" aria-label="Previous">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="tc-dots" id="tcDots"></div>
+            <button class="tc-next" id="tcNext" aria-label="Next">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="review-summary" data-animate="fade-up">
+          <div class="rs-rating">
+            <span class="rs-num">4.9</span>
+            <div class="rs-stars">★★★★★</div>
+            <span class="rs-count">Based on 1,240+ reviews</span>
+          </div>
+          <div class="rs-bars">
+            <div class="rs-bar-row"><span>5★</span><div class="rs-bar"><div class="rs-fill" style="width:88%"></div></div><span>88%</span></div>
+            <div class="rs-bar-row"><span>4★</span><div class="rs-bar"><div class="rs-fill" style="width:9%"></div></div><span>9%</span></div>
+            <div class="rs-bar-row"><span>3★</span><div class="rs-bar"><div class="rs-fill" style="width:2%"></div></div><span>2%</span></div>
+            <div class="rs-bar-row"><span>2★</span><div class="rs-bar"><div class="rs-fill" style="width:1%"></div></div><span>1%</span></div>
+            <div class="rs-bar-row"><span>1★</span><div class="rs-bar"><div class="rs-fill" style="width:0%"></div></div><span>0%</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ ABOUT / STORY ░░ -->
+    <section class="about section-gap" id="about">
+      <div class="container about-inner">
+        <div class="about-content" data-animate="fade-up">
+          <span class="eyebrow">Our Story</span>
+          <h2 class="section-title">Born From a Sleepless Night</h2>
+          <p>It started in 2018 when founder Mia Chen couldn't find a blanket that was both genuinely cozy <em>and</em> made with care for the planet. She spent two years working with textile artisans in Portugal to perfect a recipe for the ultimate blanket.</p>
+          <p>Today, CloudNest ships to 42 countries and has donated over 12,000 blankets to shelters across North America through our <strong>Nest for All</strong> program.</p>
+          <div class="about-milestones">
+            <div class="milestone">
+              <span class="m-year">2018</span>
+              <span class="m-text">Founded in San Francisco</span>
+            </div>
+            <div class="milestone">
+              <span class="m-year">2020</span>
+              <span class="m-text">OEKO-TEX Certified</span>
+            </div>
+            <div class="milestone">
+              <span class="m-year">2022</span>
+              <span class="m-text">B Corp Status</span>
+            </div>
+            <div class="milestone">
+              <span class="m-year">2024</span>
+              <span class="m-text">50,000+ Customers</span>
+            </div>
+          </div>
+          <a href="#" class="btn-primary btn-lg">Meet the Team →</a>
+        </div>
+        <div class="about-visual" data-animate="fade-left">
+          <img src="https://picsum.photos/seed/founder/520/620" alt="CloudNest founder" class="about-img" />
+          <div class="about-quote">
+            <svg viewBox="0 0 40 32" fill="#DBEAFE" class="quote-mark"><path d="M0 32V19.2C0 8.533 6.267 2.133 18.8 0l2 4C14.4 5.6 11.2 8.933 10.4 14H18V32H0zm22 0V19.2C22 8.533 28.267 2.133 40.8 0l2 4C36.4 5.6 33.2 8.933 32.4 14H40V32H22z"/></svg>
+            <p>We believe comfort shouldn't cost the Earth.</p>
+            <cite>— Mia Chen, Founder</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ NEWSLETTER ░░ -->
+    <section class="newsletter section-gap" id="newsletter">
+      <div class="container">
+        <div class="newsletter-card" data-animate="fade-up">
+          <div class="nl-bg-shapes">
+            <div class="nl-shape nl-s1"></div>
+            <div class="nl-shape nl-s2"></div>
+          </div>
+          <div class="nl-content">
+            <span class="eyebrow" style="color:#93C5FD">Stay Cozy</span>
+            <h2>Get 15% Off Your First Order</h2>
+            <p>Join 80,000+ cozy enthusiasts. We send weekly comfort inspiration, exclusive deals & early access to new collections.</p>
+            <form class="nl-form" id="nlForm" novalidate>
+              <div class="nl-input-wrap">
+                <input type="email" placeholder="Enter your email address" class="nl-input" id="nlEmail" required />
+                <button type="submit" class="btn-primary nl-btn">Claim 15% Off</button>
+              </div>
+              <p class="nl-legal">No spam, ever. Unsubscribe any time. 🤍</p>
+              <div class="nl-success" id="nlSuccess">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                You're in! Check your inbox for your 15% code. 🎉
+              </div>
+            </form>
+          </div>
+          <div class="nl-visual">
+            <img src="https://picsum.photos/seed/newsletterblanket/420/380" alt="Cozy blanket newsletter" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo footer-logo">
+          <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 26c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="#93C5FD" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M2 26h32" stroke="#93C5FD" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M10 26c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#BFDBFE" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          CloudNest
+        </a>
+        <p class="footer-tagline">Making the world cozier,<br/>one blanket at a time.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.772 0 3.137-1.868 3.137-4.566 0-2.387-1.715-4.057-4.163-4.057-2.837 0-4.5 2.127-4.5 4.326 0 .856.33 1.775.741 2.277a.3.3 0 01.069.285c-.076.312-.245.995-.278 1.134-.044.183-.146.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.967-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.938.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <ul>
+            <li><a href="#">All Blankets</a></li>
+            <li><a href="#">Throws</a></li>
+            <li><a href="#">Weighted Blankets</a></li>
+            <li><a href="#">Kids Collection</a></li>
+            <li><a href="#">Outdoor</a></li>
+            <li><a href="#">Gift Sets</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Nest for All</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Care Guide</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2025 CloudNest Inc. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Settings</a>
+        </div>
+        <div class="payment-icons">
+          <span class="pay-icon">VISA</span>
+          <span class="pay-icon">MC</span>
+          <span class="pay-icon">AMEX</span>
+          <span class="pay-icon">PayPal</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    <span id="toastMsg">Added to cart!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
