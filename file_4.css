@@ -862,3 +862,201 @@ ul { list-style: none; }
 .carousel-prev, .carousel-next {
   background: var(--white);
   border: 1.5px solid var(--blue-200
+# filename: script.js
+```javascript
+// Cozy Blanket Co. - Interactive JavaScript
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // ── Smooth scroll for nav links ──────────────────────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ── Sticky nav shadow on scroll ──────────────────────────────────────────
+  const nav = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+
+  // ── Mobile hamburger toggle ──────────────────────────────────────────────
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks  = document.querySelector('.nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+    // Close on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+      });
+    });
+  }
+
+  // ── Intersection Observer — fade-in-up animations ────────────────────────
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // ── Product card tilt effect ─────────────────────────────────────────────
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect   = card.getBoundingClientRect();
+      const x      = e.clientX - rect.left - rect.width  / 2;
+      const y      = e.clientY - rect.top  - rect.height / 2;
+      const tiltX  = -(y / (rect.height / 2)) * 6;
+      const tiltY  =  (x / (rect.width  / 2)) * 6;
+      card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.03)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale(1)';
+    });
+  });
+
+  // ── Testimonial carousel ─────────────────────────────────────────────────
+  const track   = document.querySelector('.testimonial-track');
+  const cards   = document.querySelectorAll('.testimonial-card');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const dots    = document.querySelectorAll('.carousel-dot');
+
+  if (track && cards.length) {
+    let current = 0;
+    let autoplay;
+
+    const goTo = (index) => {
+      current = (index + cards.length) % cards.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    };
+
+    const startAutoplay = () => {
+      autoplay = setInterval(() => goTo(current + 1), 5000);
+    };
+
+    const stopAutoplay = () => clearInterval(autoplay);
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { stopAutoplay(); goTo(current - 1); startAutoplay(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { stopAutoplay(); goTo(current + 1); startAutoplay(); });
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { stopAutoplay(); goTo(i); startAutoplay(); }));
+
+    // Touch / swipe support
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend',   e => {
+      const delta = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(delta) > 40) { stopAutoplay(); goTo(current + (delta > 0 ? 1 : -1)); startAutoplay(); }
+    });
+
+    goTo(0);
+    startAutoplay();
+  }
+
+  // ── Counter animation (stats section) ────────────────────────────────────
+  const counters = document.querySelectorAll('.stat-number');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el      = entry.target;
+      const target  = parseInt(el.dataset.target, 10);
+      const suffix  = el.dataset.suffix || '';
+      const duration = 1800;
+      const step    = Math.ceil(target / (duration / 16));
+      let   count   = 0;
+      const tick = () => {
+        count = Math.min(count + step, target);
+        el.textContent = count.toLocaleString() + suffix;
+        if (count < target) requestAnimationFrame(tick);
+      };
+      tick();
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // ── Newsletter form ───────────────────────────────────────────────────────
+  const form = document.querySelector('.newsletter-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = form.querySelector('input[type="email"]');
+      const btn   = form.querySelector('button[type="submit"]');
+      if (!input.value || !input.value.includes('@')) {
+        input.classList.add('shake');
+        setTimeout(() => input.classList.remove('shake'), 600);
+        return;
+      }
+      btn.textContent  = '✓ You\'re in!';
+      btn.disabled     = true;
+      input.disabled   = true;
+      form.classList.add('submitted');
+    });
+  }
+
+  // ── Color swatch switcher on product cards ────────────────────────────────
+  document.querySelectorAll('.swatch-group').forEach(group => {
+    group.querySelectorAll('.swatch').forEach(swatch => {
+      swatch.addEventListener('click', () => {
+        group.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+        swatch.classList.add('active');
+        const card = group.closest('.product-card');
+        const img  = card ? card.querySelector('.product-img') : null;
+        if (img && swatch.dataset.img) img.src = swatch.dataset.img;
+      });
+    });
+  });
+
+  // ── Parallax on hero image ────────────────────────────────────────────────
+  const heroBg = document.querySelector('.hero-bg');
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      const offset = window.scrollY;
+      heroBg.style.transform = `translateY(${offset * 0.35}px)`;
+    }, { passive: true });
+  }
+
+  // ── "Add to Cart" button micro-animation ─────────────────────────────────
+  document.querySelectorAll('.btn-cart').forEach(btn => {
+    btn.addEventListener('click', function () {
+      this.classList.add('added');
+      const original = this.textContent;
+      this.textContent = '✓ Added!';
+      setTimeout(() => {
+        this.textContent = original;
+        this.classList.remove('added');
+      }, 1800);
+    });
+  });
+
+  // ── Scroll-to-top button ──────────────────────────────────────────────────
+  const scrollTop = document.querySelector('.scroll-top');
+  if (scrollTop) {
+    window.addEventListener('scroll', () => {
+      scrollTop.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+});
