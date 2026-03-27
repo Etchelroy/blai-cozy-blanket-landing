@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CozyNest — Luxuriously soft blankets crafted for the moments that matter most. Shop our premium collection." />
+  <title>CozyNest — Premium Blankets</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ░░░░░ ANNOUNCEMENT BAR ░░░░░ -->
+  <div class="announcement-bar">
+    <p>✦ Free shipping on orders over $75 &nbsp;·&nbsp; Use code <strong>COZY20</strong> for 20% off your first order ✦</p>
+  </div>
+
+  <!-- ░░░░░ NAVBAR ░░░░░ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="CozyNest home">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <ellipse cx="14" cy="14" rx="13" ry="13" fill="#1A4B8C" opacity="0.12"/>
+          <path d="M7 18c1-5 4-9 7-9s6 4 7 9" stroke="#1A4B8C" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M5 20c2-7 5-12 9-12s7 5 9 12" stroke="#1A4B8C" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+        </svg>
+        CozyNest
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#products" class="btn btn-sm btn-outline">Shop Now</a>
+        <button class="nav-cart" aria-label="Shopping cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span id="cart-badge" class="cart-badge" style="display:none">0</span>
+        </button>
+        <button id="burger" class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+      <ul role="list">
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#newsletter" class="btn btn-primary btn-block">Get 20% Off</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ░░░░░ HERO ░░░░░ -->
+  <section id="hero" class="hero">
+    <div class="hero-bg" style="background-image: url('https://picsum.photos/seed/blanketcozy/1600/900')"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content" data-reveal>
+      <span class="eyebrow">Est. 2018 · Handcrafted Comfort</span>
+      <h1>Wrap Yourself<br/><em>in Pure Bliss</em></h1>
+      <p class="hero-sub">Luxuriously soft blankets woven from the finest natural fibres —<br class="d-none-sm"/> for every cozy moment life has to offer.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary btn-lg">Explore Collection</a>
+        <a href="#story" class="btn btn-ghost btn-lg">Our Story</a>
+      </div>
+      <div class="hero-trust">
+        <span>⭐⭐⭐⭐⭐</span>
+        <span>Loved by 50,000+ customers</span>
+        <span>·</span>
+        <span>Free returns</span>
+      </div>
+    </div>
+    <a href="#products" class="scroll-hint" aria-label="Scroll down">
+      <span class="scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- ░░░░░ BRAND BADGES ░░░░░ -->
+  <section class="badges-bar" aria-label="Key benefits">
+    <div class="container badges-grid">
+      <div class="badge-item" data-reveal>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A4B8C" stroke-width="1.6" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>100% Natural Fibres</span>
+      </div>
+      <div class="badge-item" data-reveal>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A4B8C" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span>Ships in 1–3 Days</span>
+      </div>
+      <div class="badge-item" data-reveal>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A4B8C" stroke-width="1.6" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <span>30-Day Free Returns</span>
+      </div>
+      <div class="badge-item" data-reveal>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A4B8C" stroke-width="1.6" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <span>Ethically Sourced</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░ STATS ░░░░░ -->
+  <section class="stats-section" aria-label="Company stats">
+    <div class="container stats-grid">
+      <div class="stat-item" data-reveal>
+        <strong class="stat-num" data-count="50000" data-suffix="+">0</strong>
+        <span>Happy Customers</span>
+      </div>
+      <div class="stat-item" data-reveal>
+        <strong class="stat-num" data-count="18" data-suffix="">0</strong>
+        <span>Signature Weaves</span>
+      </div>
+      <div class="stat-item" data-reveal>
+        <strong class="stat-num" data-count="4" data-suffix=".9★">0</strong>
+        <span>Average Rating</span>
+      </div>
+      <div class="stat-item" data-reveal>
+        <strong class="stat-num" data-count="6" data-suffix=" yrs">0</strong>
+        <span>Crafting Comfort</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░ FEATURED PRODUCTS ░░░░░ -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">Our Collection</span>
+        <h2>Find Your Perfect<br/><em>Blanket</em></h2>
+        <p>Each piece is crafted with intention, built to last, and designed to make every evening feel like a retreat.</p>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-viewport">
+          <div id="product-track" class="product-track">
+
+            <!-- Product 1 -->
+            <div class="product-card" data-reveal>
+              <div class="product-img-wrap">
+                <span class="product-tag">Bestseller</span>
+                <img class="product-img" src="https://picsum.photos/seed/blanket1/600/700" alt="Cloud Nine Throw" loading="lazy" />
+                <div class="product-overlay">
+                  <button class="btn btn-primary btn-cart">Add to Cart</button>
+                </div>
+              </div>
+              <div class="product-info">
+                <div class="product-swatches">
+                  <button class="swatch swatch-active" data-color="Ivory" data-seed="blanket1" style="background:#FAF7F2" aria-label="Ivory"></button>
+                  <button class="swatch" data-color="Sky Blue" data-seed="blanket2" style="background:#A8C4E0" aria-label="Sky Blue"></button>
+                  <button class="swatch" data-color="Slate" data-seed="blanket3" style="background:#7A8FA6" aria-label="Slate"></button>
+                </div>
+                <span class="color-label">Ivory</span>
+                <h3>Cloud Nine Throw</h3>
+                <div class="product-rating">★★★★★ <span>(312)</span></div>
+                <div class="product-price">
+                  <span class="price-current">$89</span>
+                  <span class="price-old">$110</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-reveal>
+              <div class="product-img-wrap">
+                <span class="product-tag new">New</span>
+                <img class="product-img" src="https://picsum.photos/seed/blanket4/600/700" alt="Alpine Dream Blanket" loading="lazy" />
+                <div class="product-overlay">
+                  <button class="btn btn-primary btn-cart">Add to Cart</button>
+                </div>
+              </div>
+              <div class="product-info">
+                <div class="product-swatches">
+                  <button class="swatch swatch-active" data-color="Ocean" data-seed="blanket4" style="background:#2A6BA8" aria-label="Ocean"></button>
+                  <button class="swatch" data-color="Navy" data-seed="blanket5" style="background:#1A3557" aria-label="Navy"></button>
+                  <button class="swatch" data-color="Cream" data-seed="blanket6" style="background:#F5ECD7" aria-label="Cream"></button>
+                </div>
+                <span class="color-label">Ocean</span>
+                <h3>Alpine Dream Blanket</h3>
+                <div class="product-rating">★★★★★ <span>(187)</span></div>
+                <div class="product-price">
+                  <span class="price-current">$124</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" data-reveal>
+              <div class="product-img-wrap">
+                <img class="product-img" src="https://picsum.photos/seed/blanket7/600/700" alt="Merino Cocoon Wrap" loading="lazy" />
+                <div class="product-overlay">
+                  <button class="btn btn-primary btn-cart">Add to Cart</button>
+                </div>
+              </div>
+              <div class="product-info">
+                <div class="product-swatches">
+                  <button class="swatch swatch-active" data-color="Pearl" data-seed="blanket7" style="background:#EEE9E0" aria-label="Pearl"></button>
+                  <button class="swatch" data-color="Dusk" data-seed="blanket8" style="background:#B0C4D8" aria-label="Dusk"></button>
+                </div>
+                <span class="color-label">Pearl</span>
+                <h3>Merino Cocoon Wrap</h3>
+                <div class="product-rating">★★★★½ <span>(94)</span></div>
+                <div class="product-price">
+                  <span class="price-current">$149</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card" data-reveal>
+              <div class="product-img-wrap">
+                <span class="product-tag" style="background:#C8A95A;color:#fff">Limited</span>
+                <img class="product-img" src="https://picsum.photos/seed/blanket9/600/700" alt="Shoreline Knit Throw" loading="lazy" />
+                <div class="product-overlay">
+                  <button class="btn btn-primary btn-cart">Add to Cart</button>
+                </div>
+              </div>
+              <div class="product-info">
+                <div class="product-swatches">
+                  <button class="swatch swatch-active" data-color="Tide" data-seed="blanket9" style="background:#5C8FAB" aria-label="Tide"></button>
+                  <button class="swatch" data-color="Sand" data-seed="blanket10" style="background:#D6C4A8" aria-label="Sand"></button>
+                </div>
+                <span class="color-label">Tide</span>
+                <h3>Shoreline Knit Throw</h3>
+                <div class="product-rating">★★★★★ <span>(221)</span></div>
+                <div class="product-price">
+                  <span class="price-current">$109</span>
+                  <span class="price-old">$135</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card" data-reveal>
+              <div class="product-img-wrap">
+                <img class="product-img" src="https://picsum.photos/seed/blanket11/600/700" alt="Snowfall Oversized Blanket" loading="lazy" />
+                <div class="product-overlay">
+                  <button class="btn btn-primary btn-cart">Add to Cart</button>
+                </div>
+              </div>
+              <div class="product-info">
+                <div class="product-swatches">
+                  <button class="swatch swatch-active" data-color="White" data-seed="blanket11" style="background:#F8F8F8;border:1px solid #ddd" aria-label="White"></button>
+                  <button class="swatch" data-color="Ice" data-seed="blanket12" style="background:#D4E8F5" aria-label="Ice"></button>
+                </div>
+                <span class="color-label">White</span>
+                <h3>Snowfall Oversized</h3>
+                <div class="product-rating">★★★★★ <span>(408)</span></div>
+                <div class="product-price">
+                  <span class="price-current">$139</span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /product-track -->
+        </div>
+
+        <div class="carousel-controls">
+          <button id="prev-btn" class="carousel-btn" aria-label="Previous" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div id="carousel-dots" class="carousel-dots" role="tablist" aria-label="Product slides"></div>
+          <button id="next-btn" class="carousel-btn" aria-label="Next">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░ LIFESTYLE SPLIT SECTION ░░░░░ -->
+  <section id="story" class="split-section">
+    <div class="split-img" data-reveal>
+      <img src="https://picsum.photos/seed/cozyhome/800/900" alt="Person wrapped in a CozyNest blanket by a fireplace" loading="lazy" />
+      <div class="split-img-badge">
+        <strong>Since 2018</strong>
+        <span>Family Owned</span>
+      </div>
+    </div>
+    <div class="split-content" data-reveal>
+      <span class="eyebrow">Our Story</span>
+      <h2>Made with Love,<br/><em>Worn with Joy</em></h2>
+      <p>CozyNest was born from a simple belief: everyone deserves a sanctuary. Our founder, Emma, started weaving blankets in her Vermont farmhouse kitchen — gifting warmth to friends and family through the long winter months.</p>
+      <p>Today, every CozyNest blanket is still made with that same intention. We partner with small mills in New England and Portugal, sourcing the finest merino wool, organic cotton, and recycled cashmere to create pieces that feel like a hug.</p>
+      <ul class="check-list">
+        <li>Certified organic & ethically sourced materials</li>
+        <li>Carbon-neutral shipping on all orders</li>
+        <li>1% of revenue donated to housing charities</li>
+        <li>B Corp Certified since 2021</li>
+      </ul>
+      <a href="#newsletter" class="btn btn-primary">Join Our Community</a>
+    </div>
+  </section>
+
+  <!-- ░░░░░ MATERIALS ░░░░░ -->
+  <section id="materials" class="materials-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">What's Inside</span>
+        <h2>The Finest<br/><em>Materials</em></h2>
+        <p>We believe quality starts from the source. Every fibre is chosen with care for both your comfort and the planet.</p>
+      </div>
+      <div class="materials-grid">
+        <div class="material-card" data-reveal>
+          <div class="material-img-wrap">
+            <img src="https://picsum.photos/seed/merino/500/400" alt="Merino Wool" loading="lazy" />
+          </div>
+          <h3>Merino Wool</h3>
+          <p>Incredibly soft, temperature-regulating, and naturally odour-resistant. Sourced from farms in New Zealand where flock welfare comes first.</p>
+        </div>
+        <div class="material-card" data-reveal>
+          <div class="material-img-wrap">
+            <img src="https://picsum.photos/seed/cotton/500/400" alt="Organic Cotton" loading="lazy" />
+          </div>
+          <h3>Organic Cotton</h3>
+          <p>GOTS-certified cotton that's gentle on sensitive skin and grown without harmful pesticides. Perfect for year-round warmth.</p>
+        </div>
+        <div class="material-card" data-reveal>
+          <div class="material-img-wrap">
+            <img src="https://picsum.photos/seed/cashmere/500/400" alt="Recycled Cashmere" loading="lazy" />
+          </div>
+          <h3>Recycled Cashmere</h3>
+          <p>Upcycled from pre-consumer offcuts, our recycled cashmere delivers the same cloud-like softness with a fraction of the environmental footprint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░ FULL-WIDTH CTA ░░░░░ -->
+  <section class="cta-banner" data-reveal>
+    <div class="cta-banner-bg" style="background-image:url('https://picsum.photos/seed/cozybanner/1600/600')"></div>
+    <div class="cta-banner-overlay"></div>
+    <div class="container cta-banner-content">
+      <h2>Your New Favourite<br/><em>Evening Ritual</em></h2>
+      <p>Free shipping on orders over $75. Free returns. Always.</p>
+      <a href="#products" class="btn btn-white btn-lg">Shop the Collection</a>
+    </div>
+  </section>
+
+  <!-- ░░░░░ TESTIMONIALS ░░░░░ -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">Real Reviews</span>
+        <h2>50,000+ Cozy<br/><em>Customers</em></h2>
+      </div>
+
+      <div class="testimonials-wrapper" data-reveal>
+        <button id="t-prev" class="carousel-btn t-nav" aria-label="Previous review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div class="testimonials-track">
+          <article class="testimonial-card" aria-hidden="false">
+            <div class="t-stars">★★★★★</div>
+            <blockquote>"I bought the Cloud Nine Throw as a gift and ended up ordering one for myself. It's genuinely the softest thing I've ever touched. Worth every penny."</blockquote>
+            <div class="t-author">
+              <img src="https://picsum.photos/seed/person1/80/80" alt="Sarah M." loading="lazy" />
+              <div>
+                <strong>Sarah M.</strong>
+                <span>Portland, OR · Verified Buyer</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <div class="t-stars">★★★★★</div>
+            <blockquote>"The Alpine Dream Blanket is now a permanent fixture on our sofa. My kids fight over it every evening. The quality is outstanding — washed it dozens of times and it looks brand new."</blockquote>
+            <div class="t-author">
+              <img src="https://picsum.photos/seed/person2/80/80" alt="James T." loading="lazy" />
+              <div>
+                <strong>James T.</strong>
+                <span>Burlington, VT · Verified Buyer</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <div class="t-stars">★★★★★</div>
+            <blockquote>"As someone with sensitive skin, finding a blanket that doesn't irritate me is nearly impossible. CozyNest changed that. The organic cotton throw is an absolute game-changer."</blockquote>
+            <div class="t-author">
+              <img src="https://picsum.photos/seed/person3/80/80" alt="Priya K." loading="lazy" />
+              <div>
+                <strong>Priya K.</strong>
+                <span>Austin, TX · Verified Buyer</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card" aria-hidden="true">
+            <div class="t-stars">★★★★★</div>
+            <blockquote>"Beautiful packaging, quick shipping, and the blanket itself is just stunning. I love that CozyNest is sustainable too — feel good about every purchase."</blockquote>
+            <div class="t-author">
+              <img src="https://picsum.photos/seed/person4/80/80" alt="Lena W." loading="lazy" />
+              <div>
+                <strong>Lena W.</strong>
+                <span>Seattle, WA · Verified Buyer</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <button id="t-next" class="carousel-btn t-nav" aria-label="Next review">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <!-- Press logos -->
+      <div class="press-logos" data-reveal aria-label="As seen in">
+        <span class="press-label">As seen in</span>
+        <div class="press-logos-row">
+          <span class="press-logo">Vogue Living</span>
+          <span class="press-logo">Architectural Digest</span>
+          <span class="press-logo">The New York Times</span>
+          <span class="press-logo">Apartment Therapy</span>
+          <span class="press-logo">Real Simple</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░ HOW IT WORKS ░░░░░ -->
+  <section class="how-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">Simple & Easy</span>
+        <h2>Order in<br/><em>3 Easy Steps</em></h2>
+      </div>
+      <div class="how-grid">
+        <div class="how-step" data-reveal>
+          <div class="how-num">01</div>
+          <img src="https://picsum.photos/seed/step1/400/300" alt="Browse collection" loading="lazy" />
+          <h3>Choose Your Blanket</h3>
+          <p>Browse our collection of 18+ signature weaves and find your perfect match.</p>
+        </div>
+        <div class="how-connector" aria-hidden="true">→</div>
+        <div class="how-step" data-reveal>
+          <div class="how-num">02</div>
+          <img src="https://picsum.photos/seed/step2/400/300" alt="Customise your order" loading="lazy" />
+          <h3>Personalise It</h3>
+          <p>Pick your size, colour, and add a gift message — all at no extra cost.</p>
+        </div>
+        <div class="how-connector" aria-hidden="true">→</div>
+        <div class="how-step" data-reveal>
+          <div class="how-num">03</div>
+          <img src="https://picsum.photos/seed/step3/400/300" alt="Delivery" loading="lazy" />
+          <h3>Delivered with Love</h3>
+          <p>Ships in 1–3 business days in our signature eco-friendly packaging.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░ FAQ ░░░░░ -->
+  <section id="faq" class="faq-section">
+    <div class="container faq-inner">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">Questions?</span>
+        <h2>Frequently Asked<br/><em>Questions</em></h2>
+      </div>
+      <div class="faq-list" data-reveal>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What sizes do your blankets come in?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>We offer three sizes: Throw (50×60"), Full (60×80"), and Oversized (72×90"). All sizes are available in every colour and material. Our Oversized is perfect for couches and beds alike.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How do I care for my CozyNest blanket?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>Most of our blankets are machine-washable on a gentle cold cycle. Lay flat to dry for best results. Merino and cashmere blends should be hand-washed or dry-cleaned to preserve softness. Full care instructions are included with each order.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you offer free shipping?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>Yes! We offer free standard shipping on all US orders over $75. Expedited and international shipping options are available at checkout. All orders are carbon-neutral.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What is your return policy?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>We offer 30-day free returns — no questions asked. If you're not completely in love with your blanket, simply reach out and we'll arrange a free return label and full refund.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Are your products truly sustainable?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>Absolutely. We're a certified B Corp, use GOTS-certified organic cotton, source recycled cashmere from pre-consumer offcuts, and offset 100% of our shipping emissions. Our packaging is plastic-free and made from recycled materials.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I add a personalised gift message?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>Yes! At checkout you can add a free handwritten gift note. Our signature gift wrapping (kraft paper & twine) is also available for $5. Perfect for birthdays, holidays, and housewarming gifts.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░░░░ INSTAGRAM GRID ░░░░░ -->
+  <section class="instagram-section" aria-label="Instagram gallery">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="eyebrow">@cozynestblankets</span>
+        <h2>Tag Us &amp; Get<br/><em>Featured</em></h2>
+      </div>
+      <div class="ig-grid" data-reveal>
+        <a href="#" class="ig-item" aria-label="Instagram photo 1"><img src="https://picsum.photos/seed/ig1/400/400" alt="" loading="lazy"/><span class="ig-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></span></a>
+        <a href="#" class="ig-item" aria-label="Instagram photo 2"><img src="https://picsum.photos/seed/ig2/400/400" alt="" loading="lazy"/><span class="ig-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></span></a>
+        <a href="#" class="ig-item" aria-label="Instagram photo 3"><img src="https://picsum.photos/seed/ig3/400/400" alt="" loading="lazy"/><span class="ig-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></span></a>
+        <a href="#" class="ig-item" aria-label="Instagram photo 4"><img src="https://picsum.photos/seed/ig4/400/400" alt="" loading="lazy"/><span class="ig-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></span></a>
+        <a href="#" class="ig-item" aria-label="Instagram photo 5"><img src="https://picsum.photos/seed/ig5/400/400" alt="" loading="lazy"/><span class="ig-overlay"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3
