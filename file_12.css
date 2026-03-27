@@ -766,3 +766,631 @@ section { padding: 7rem 1.5rem; }
   height: 100%;
   object-fit: cover;
   
+# filename: script.js
+
+```javascript
+// ============================================================
+// CozyCraft Blankets — Main Script
+// ============================================================
+
+(function () {
+  "use strict";
+
+  /* ----------------------------------------------------------
+     Utility helpers
+  ---------------------------------------------------------- */
+  const qs = (sel, ctx = document) => ctx.querySelector(sel);
+  const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+  const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
+
+  /* ----------------------------------------------------------
+     1. Navbar — shrink + hide/show on scroll
+  ---------------------------------------------------------- */
+  const navbar = qs("#navbar");
+  let lastScroll = 0;
+  let ticking = false;
+
+  function handleNavbar() {
+    const current = window.scrollY;
+    if (current > 80) {
+      navbar.classList.add("navbar--scrolled");
+    } else {
+      navbar.classList.remove("navbar--scrolled");
+    }
+    if (current > lastScroll && current > 200) {
+      navbar.classList.add("navbar--hidden");
+    } else {
+      navbar.classList.remove("navbar--hidden");
+    }
+    lastScroll = current <= 0 ? 0 : current;
+    ticking = false;
+  }
+
+  on(window, "scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(handleNavbar);
+      ticking = true;
+    }
+  });
+
+  /* ----------------------------------------------------------
+     2. Mobile menu toggle
+  ---------------------------------------------------------- */
+  const menuBtn = qs("#menuBtn");
+  const mobileMenu = qs("#mobileMenu");
+  const menuIconOpen = qs("#menuIconOpen");
+  const menuIconClose = qs("#menuIconClose");
+
+  function toggleMenu(forceClose = false) {
+    const isOpen = mobileMenu.classList.contains("mobile-menu--open");
+    if (forceClose || isOpen) {
+      mobileMenu.classList.remove("mobile-menu--open");
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuIconOpen.style.display = "block";
+      menuIconClose.style.display = "none";
+      document.body.style.overflow = "";
+    } else {
+      mobileMenu.classList.add("mobile-menu--open");
+      menuBtn.setAttribute("aria-expanded", "true");
+      menuIconOpen.style.display = "none";
+      menuIconClose.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  on(menuBtn, "click", () => toggleMenu());
+
+  qsa(".mobile-menu__link").forEach((link) => {
+    on(link, "click", () => toggleMenu(true));
+  });
+
+  /* ----------------------------------------------------------
+     3. Smooth scroll for anchor links
+  ---------------------------------------------------------- */
+  qsa('a[href^="#"]').forEach((anchor) => {
+    on(anchor, "click", (e) => {
+      const target = qs(anchor.getAttribute("href"));
+      if (!target) return;
+      e.preventDefault();
+      const offset = navbar ? navbar.offsetHeight : 0;
+      const top =
+        target.getBoundingClientRect().top + window.scrollY - offset - 16;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  });
+
+  /* ----------------------------------------------------------
+     4. Hero parallax
+  ---------------------------------------------------------- */
+  const heroBg = qs(".hero__bg");
+
+  function parallaxHero() {
+    if (!heroBg) return;
+    const scrolled = window.scrollY;
+    heroBg.style.transform = `translateY(${scrolled * 0.35}px)`;
+  }
+
+  on(window, "scroll", parallaxHero, { passive: true });
+
+  /* ----------------------------------------------------------
+     5. Intersection Observer — fade-in animations
+  ---------------------------------------------------------- */
+  const animatedEls = qsa("[data-animate]");
+
+  const observerOptions = {
+    threshold: 0.12,
+    rootMargin: "0px 0px -40px 0px",
+  };
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const delay = el.dataset.delay || 0;
+        setTimeout(() => {
+          el.classList.add("animate--visible");
+        }, Number(delay));
+        io.unobserve(el);
+      }
+    });
+  }, observerOptions);
+
+  animatedEls.forEach((el) => {
+    el.classList.add("animate--hidden");
+    io.observe(el);
+  });
+
+  /* ----------------------------------------------------------
+     6. Testimonial carousel
+  ---------------------------------------------------------- */
+  const track = qs("#testimonialTrack");
+  const slides = qsa(".testimonial-card", track || document);
+  const prevBtn = qs("#testimonialPrev");
+  const nextBtn = qs("#testimonialNext");
+  const dotsContainer = qs("#testimonialDots");
+
+  let currentSlide = 0;
+  let autoplayTimer = null;
+  let isDragging = false;
+  let dragStartX = 0;
+  let dragCurrentX = 0;
+
+  function getSlidesPerView() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 640) return 2;
+    return 1;
+  }
+
+  function getTotalPages() {
+    return Math.ceil(slides.length / getSlidesPerView());
+  }
+
+  function buildDots() {
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = "";
+    const total = getTotalPages();
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement("button");
+      dot.className = "testimonial-dot" + (i === currentSlide ? " active" : "");
+      dot.setAttribute("aria-label", `Go to slide group ${i + 1}`);
+      on(dot, "click", () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    qsa(".testimonial-dot").forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentSlide);
+    });
+  }
+
+  function goToSlide(index) {
+    const total = getTotalPages();
+    currentSlide = ((index % total) + total) % total;
+    const perView = getSlidesPerView();
+    const slideWidthPercent = 100 / perView;
+    if (track) {
+      track.style.transition = "transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94)";
+      track.style.transform = `translateX(-${currentSlide * slideWidthPercent * perView}%)`;
+    }
+    updateDots();
+    resetAutoplay();
+  }
+
+  function nextSlide() {
+    goToSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentSlide - 1);
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(nextSlide, 5000);
+  }
+
+  on(nextBtn, "click", nextSlide);
+  on(prevBtn, "click", prevSlide);
+
+  // Touch / drag support
+  if (track) {
+    on(track, "mousedown", (e) => {
+      isDragging = true;
+      dragStartX = e.clientX;
+      track.style.transition = "none";
+      track.style.cursor = "grabbing";
+    });
+
+    on(window, "mousemove", (e) => {
+      if (!isDragging) return;
+      dragCurrentX = e.clientX - dragStartX;
+      const perView = getSlidesPerView();
+      const base = -(currentSlide * (100 / perView) * perView);
+      const drag = (dragCurrentX / track.offsetWidth) * 100;
+      track.style.transform = `translateX(${base + drag}%)`;
+    });
+
+    on(window, "mouseup", () => {
+      if (!isDragging) return;
+      isDragging = false;
+      track.style.cursor = "grab";
+      if (dragCurrentX < -60) nextSlide();
+      else if (dragCurrentX > 60) prevSlide();
+      else goToSlide(currentSlide);
+      dragCurrentX = 0;
+    });
+
+    on(track, "touchstart", (e) => {
+      dragStartX = e.touches[0].clientX;
+      track.style.transition = "none";
+    }, { passive: true });
+
+    on(track, "touchmove", (e) => {
+      dragCurrentX = e.touches[0].clientX - dragStartX;
+      const perView = getSlidesPerView();
+      const base = -(currentSlide * (100 / perView) * perView);
+      const drag = (dragCurrentX / track.offsetWidth) * 100;
+      track.style.transform = `translateX(${base + drag}%)`;
+    }, { passive: true });
+
+    on(track, "touchend", () => {
+      if (dragCurrentX < -60) nextSlide();
+      else if (dragCurrentX > 60) prevSlide();
+      else goToSlide(currentSlide);
+      dragCurrentX = 0;
+    });
+  }
+
+  // Recalculate on resize
+  let resizeTimer;
+  on(window, "resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      buildDots();
+      goToSlide(currentSlide);
+    }, 200);
+  });
+
+  if (slides.length) {
+    buildDots();
+    resetAutoplay();
+  }
+
+  /* ----------------------------------------------------------
+     7. Product card hover tilt
+  ---------------------------------------------------------- */
+  qsa(".product-card").forEach((card) => {
+    on(card, "mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const rotateX = ((y - cy) / cy) * -6;
+      const rotateY = ((x - cx) / cx) * 6;
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    });
+
+    on(card, "mouseleave", () => {
+      card.style.transform =
+        "perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)";
+    });
+  });
+
+  /* ----------------------------------------------------------
+     8. Product quick-view modal
+  ---------------------------------------------------------- */
+  const modal = qs("#quickViewModal");
+  const modalClose = qs("#modalClose");
+  const modalOverlay = qs("#modalOverlay");
+
+  const productData = {
+    "cloud-nine": {
+      name: "Cloud Nine Throw",
+      price: "$89",
+      rating: 5,
+      reviews: 248,
+      description:
+        "Sink into unparalleled softness with our best-selling Cloud Nine Throw. Crafted from 100% premium micro-fleece, it's lightweight yet wonderfully warm — perfect for movie nights, reading nooks, and everything in between.",
+      colors: ["#dbeafe", "#bfdbfe", "#93c5fd", "#f8fafc"],
+      image: "https://picsum.photos/seed/cloudnine/600/500",
+    },
+    "arctic-luxe": {
+      name: "Arctic Luxe Blanket",
+      price: "$129",
+      rating: 5,
+      reviews: 183,
+      description:
+        "Experience hotel-quality luxury at home. The Arctic Luxe features a double-sided design — plush sherpa on one side, silky-smooth velvet on the other. Oversized for full-body comfort.",
+      colors: ["#eff6ff", "#dbeafe", "#e0f2fe", "#f1f5f9"],
+      image: "https://picsum.photos/seed/arcticluxe/600/500",
+    },
+    "knit-haven": {
+      name: "Knit Haven Wrap",
+      price: "$74",
+      rating: 4,
+      reviews: 156,
+      description:
+        "Handcrafted chunky knit texture gives the Haven Wrap an artisan feel. Breathable enough for year-round use, it adds instant hygge to any space whether draped on your sofa or wrapped around your shoulders.",
+      colors: ["#f0f9ff", "#e0f2fe", "#bae6fd", "#f8fafc"],
+      image: "https://picsum.photos/seed/knithaven/600/500",
+    },
+    "velvet-dreams": {
+      name: "Velvet Dreams",
+      price: "$109",
+      rating: 5,
+      reviews: 211,
+      description:
+        "Our most indulgent blanket yet. Velvet Dreams wraps you in a cascade of ultra-plush velvet with a subtle shimmer finish. Available in our signature blue palette for a look as good as the feel.",
+      colors: ["#1d4ed8", "#3b82f6", "#60a5fa", "#93c5fd"],
+      image: "https://picsum.photos/seed/velvetdreams/600/500",
+    },
+  };
+
+  function openModal(key) {
+    const data = productData[key];
+    if (!data || !modal) return;
+
+    qs("#modalImage").src = data.image;
+    qs("#modalImage").alt = data.name;
+    qs("#modalProductName").textContent = data.name;
+    qs("#modalProductPrice").textContent = data.price;
+    qs("#modalProductDescription").textContent = data.description;
+
+    // Stars
+    const starsEl = qs("#modalStars");
+    starsEl.innerHTML = "";
+    for (let i = 0; i < 5; i++) {
+      const star = document.createElement("span");
+      star.textContent = i < data.rating ? "★" : "☆";
+      star.style.color = i < data.rating ? "#f59e0b" : "#cbd5e1";
+      starsEl.appendChild(star);
+    }
+    qs("#modalReviews").textContent = `(${data.reviews} reviews)`;
+
+    // Color swatches
+    const swatchContainer = qs("#modalSwatches");
+    swatchContainer.innerHTML = "";
+    data.colors.forEach((color, i) => {
+      const swatch = document.createElement("button");
+      swatch.className = "color-swatch" + (i === 0 ? " active" : "");
+      swatch.style.background = color;
+      swatch.setAttribute("aria-label", `Color option ${i + 1}`);
+      on(swatch, "click", () => {
+        qsa(".color-swatch").forEach((s) => s.classList.remove("active"));
+        swatch.classList.add("active");
+      });
+      swatchContainer.appendChild(swatch);
+    });
+
+    modal.classList.add("modal--open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove("modal--open");
+    document.body.style.overflow = "";
+  }
+
+  qsa("[data-quickview]").forEach((btn) => {
+    on(btn, "click", () => openModal(btn.dataset.quickview));
+  });
+
+  on(modalClose, "click", closeModal);
+  on(modalOverlay, "click", closeModal);
+
+  on(document, "keydown", (e) => {
+    if (e.key === "Escape") {
+      closeModal();
+      toggleMenu(true);
+    }
+  });
+
+  /* ----------------------------------------------------------
+     9. Add to cart animation
+  ---------------------------------------------------------- */
+  const cartCount = qs("#cartCount");
+  let cartItems = 0;
+
+  qsa("[data-add-cart]").forEach((btn) => {
+    on(btn, "click", function () {
+      cartItems++;
+      cartCount.textContent = cartItems;
+      cartCount.style.display = "flex";
+
+      // Button feedback
+      const original = btn.textContent;
+      btn.textContent = "Added ✓";
+      btn.classList.add("btn--added");
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove("btn--added");
+      }, 1800);
+
+      // Bounce cart icon
+      const cartIcon = qs("#cartIcon");
+      if (cartIcon) {
+        cartIcon.classList.add("cart--bounce");
+        setTimeout(() => cartIcon.classList.remove("cart--bounce"), 600);
+      }
+    });
+  });
+
+  /* ----------------------------------------------------------
+     10. Newsletter form
+  ---------------------------------------------------------- */
+  const newsletterForm = qs("#newsletterForm");
+
+  on(newsletterForm, "submit", (e) => {
+    e.preventDefault();
+    const input = qs("#newsletterEmail");
+    const btn = qs("#newsletterBtn");
+    const msg = qs("#newsletterMsg");
+
+    if (!input.value || !input.value.includes("@")) {
+      msg.textContent = "Please enter a valid email address.";
+      msg.className = "newsletter__msg newsletter__msg--error";
+      return;
+    }
+
+    btn.textContent = "Subscribed ✓";
+    btn.disabled = true;
+    input.disabled = true;
+    msg.textContent =
+      "Welcome to the CozyCraft family! Check your inbox for a special gift 🎁";
+    msg.className = "newsletter__msg newsletter__msg--success";
+    input.value = "";
+  });
+
+  /* ----------------------------------------------------------
+     11. Counter animation (stats section)
+  ---------------------------------------------------------- */
+  const counters = qsa("[data-counter]");
+
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseFloat(el.dataset.counter);
+        const suffix = el.dataset.suffix || "";
+        const duration = 1800;
+        const startTime = performance.now();
+
+        function animate(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = target * eased;
+          el.textContent =
+            (Number.isInteger(target)
+              ? Math.round(value).toLocaleString()
+              : value.toFixed(1)) + suffix;
+          if (progress < 1) requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+        counterObserver.unobserve(el);
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  counters.forEach((c) => counterObserver.observe(c));
+
+  /* ----------------------------------------------------------
+     12. Sticky CTA bar
+  ---------------------------------------------------------- */
+  const stickyCta = qs("#stickyCta");
+  const heroSection = qs("#hero");
+
+  if (stickyCta && heroSection) {
+    const stickyObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          stickyCta.classList.toggle("sticky-cta--visible", !entry.isIntersecting);
+        });
+      },
+      { threshold: 0 }
+    );
+    stickyObserver.observe(heroSection);
+  }
+
+  /* ----------------------------------------------------------
+     13. Scroll progress bar
+  ---------------------------------------------------------- */
+  const progressBar = qs("#scrollProgress");
+
+  on(
+    window,
+    "scroll",
+    () => {
+      if (!progressBar) return;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (window.scrollY / docHeight) * 100;
+      progressBar.style.width = `${Math.min(scrolled, 100)}%`;
+    },
+    { passive: true }
+  );
+
+  /* ----------------------------------------------------------
+     14. Lazy image loader with blur-up
+  ---------------------------------------------------------- */
+  qsa("img[data-src]").forEach((img) => {
+    const lazyObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const target = entry.target;
+          target.src = target.dataset.src;
+          target.addEventListener("load", () => target.classList.add("loaded"));
+          lazyObserver.unobserve(target);
+        });
+      },
+      { rootMargin: "200px" }
+    );
+    lazyObserver.observe(img);
+  });
+
+  /* ----------------------------------------------------------
+     15. Accordion (FAQ section)
+  ---------------------------------------------------------- */
+  qsa(".faq-item").forEach((item) => {
+    const trigger = qs(".faq-question", item);
+    const content = qs(".faq-answer", item);
+
+    on(trigger, "click", () => {
+      const isOpen = item.classList.contains("faq-item--open");
+
+      // Close all
+      qsa(".faq-item--open").forEach((open) => {
+        open.classList.remove("faq-item--open");
+        qs(".faq-answer", open).style.maxHeight = "0";
+        qs(".faq-icon", open).textContent = "+";
+      });
+
+      if (!isOpen) {
+        item.classList.add("faq-item--open");
+        content.style.maxHeight = content.scrollHeight + "px";
+        qs(".faq-icon", item).textContent = "−";
+      }
+    });
+  });
+
+  /* ----------------------------------------------------------
+     16. Active nav link highlight on scroll
+  ---------------------------------------------------------- */
+  const sections = qsa("section[id]");
+  const navLinks = qsa(".nav__link[href^='#']");
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach((link) => {
+            link.classList.toggle(
+              "nav__link--active",
+              link.getAttribute("href") === `#${id}`
+            );
+          });
+        }
+      });
+    },
+    {
+      rootMargin: "-40% 0px -55% 0px",
+    }
+  );
+
+  sections.forEach((section) => sectionObserver.observe(section));
+
+  /* ----------------------------------------------------------
+     17. Back to top button
+  ---------------------------------------------------------- */
+  const backToTop = qs("#backToTop");
+
+  on(
+    window,
+    "scroll",
+    () => {
+      if (!backToTop) return;
+      backToTop.classList.toggle("back-to-top--visible", window.scrollY > 500);
+    },
+    { passive: true }
+  );
+
+  on(backToTop, "click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  /* ----------------------------------------------------------
+     18. Init complete log
+  ---------------------------------------------------------- */
+  console.log(
+    "%c🧸 CozyCraft Blankets — All systems cozy!",
+    "color:#1d4ed8;font-size:14px;font-weight:bold;"
+  );
+})();
