@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CloudNest — Premium Cozy Blankets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ░░ NAVBAR ░░ -->
+  <nav class="navbar">
+    <div class="nav-inner container">
+      <a href="#" class="logo">
+        <span class="logo-icon">☁</span>CloudNest
+      </a>
+      <ul class="nav-links">
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#features">Why Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#newsletter" class="nav-cta">Get 15% Off</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ░░ HERO ░░ -->
+  <section class="hero">
+    <div class="hero-bg-wrap">
+      <img
+        class="hero-bg"
+        src="https://picsum.photos/seed/cozyblanket/1600/900"
+        alt="Cozy bedroom with soft blankets"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content container fade-in">
+      <p class="hero-eyebrow">Handcrafted in Small Batches</p>
+      <h1 class="hero-title">Wrap Yourself<br /><em>in Pure Comfort</em></h1>
+      <p class="hero-sub">Premium merino-blend blankets designed to make every moment feel like home.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">Shop the Collection</a>
+        <a href="#features"  class="btn btn-ghost">Learn More</a>
+      </div>
+      <div class="hero-trust">
+        <span>⭐⭐⭐⭐⭐</span>
+        <span>4.9 / 5 from 3,200+ reviews</span>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span class="scroll-line"></span>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ░░ STATS BAR ░░ -->
+  <section class="stats-bar">
+    <div class="container stats-grid">
+      <div class="stat-item fade-in">
+        <span class="stat-number" data-target="50000" data-suffix="+">0</span>
+        <span class="stat-label">Happy Customers</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number" data-target="12" data-suffix=" yrs">0</span>
+        <span class="stat-label">In Business</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number" data-target="100" data-suffix="%">0</span>
+        <span class="stat-label">Natural Fibres</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-number" data-target="30" data-suffix="-day">0</span>
+        <span class="stat-label">Free Returns</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PRODUCTS ░░ -->
+  <section id="products" class="section products-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="eyebrow">Our Collection</p>
+        <h2>Find Your Perfect Blanket</h2>
+        <p class="section-sub">Every blanket is crafted from ethically sourced fibres with meticulous attention to softness, weight, and warmth.</p>
+      </div>
+
+      <div class="product-grid">
+
+        <!-- Card 1 -->
+        <article class="product-card fade-in">
+          <div class="product-img-wrap">
+            <img class="product-img" src="https://picsum.photos/seed/blanket-blue/600/700" alt="Azure Cloud Blanket" />
+            <span class="product-badge">Best Seller</span>
+          </div>
+          <div class="product-info">
+            <p class="product-category">Merino Wool Blend</p>
+            <h3 class="product-name">Azure Cloud Throw</h3>
+            <p class="product-desc">Feather-light yet delightfully warm. The Azure Cloud is our most-loved everyday companion.</p>
+            <div class="swatch-group">
+              <button class="swatch active" style="background:#6FA8DC" data-img="https://picsum.photos/seed/blanket-blue/600/700" aria-label="Sky Blue"></button>
+              <button class="swatch" style="background:#2C5F8A"        data-img="https://picsum.photos/seed/blanket-navy/600/700" aria-label="Navy"></button>
+              <button class="swatch" style="background:#E8EEF4"        data-img="https://picsum.photos/seed/blanket-white/600/700" aria-label="Ivory"></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$89<span class="price-old">$110</span></span>
+              <button class="btn btn-cart">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="product-card fade-in">
+          <div class="product-img-wrap">
+            <img class="product-img" src="https://picsum.photos/seed/blanket-chunky/600/700" alt="Nordic Knit Blanket" />
+            <span class="product-badge new">New Arrival</span>
+          </div>
+          <div class="product-info">
+            <p class="product-category">Chunky Knit</p>
+            <h3 class="product-name">Nordic Knit Blanket</h3>
+            <p class="product-desc">Bold, beautiful texture. A statement piece that looks as good as it feels draped over any sofa.</p>
+            <div class="swatch-group">
+              <button class="swatch active" style="background:#B8CEDA" data-img="https://picsum.photos/seed/blanket-chunky/600/700" aria-label="Glacier"></button>
+              <button class="swatch" style="background:#F5F0EB"        data-img="https://picsum.photos/seed/blanket-cream/600/700"  aria-label="Cream"></button>
+              <button class="swatch" style="background:#3D5A73"        data-img="https://picsum.photos/seed/blanket-teal/600/700"   aria-label="Ocean"></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$129</span>
+              <button class="btn btn-cart">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="product-card fade-in">
+          <div class="product-img-wrap">
+            <img class="product-img" src="https://picsum.photos/seed/blanket-velvet/600/700" alt="Velvet Dreams Blanket" />
+          </div>
+          <div class="product-info">
+            <p class="product-category">Velvet Plush</p>
+            <h3 class="product-name">Velvet Dreams Throw</h3>
+            <p class="product-desc">Ultra-soft micro-velvet that caresses the skin. The ultimate luxury for movie nights and lazy mornings.</p>
+            <div class="swatch-group">
+              <button class="swatch active" style="background:#4A7FA5" data-img="https://picsum.photos/seed/blanket-velvet/600/700"  aria-label="Sapphire"></button>
+              <button class="swatch" style="background:#9BB8CD"        data-img="https://picsum.photos/seed/blanket-mist/600/700"    aria-label="Morning Mist"></button>
+              <button class="swatch" style="background:#1B3A52"        data-img="https://picsum.photos/seed/blanket-midnight/600/700" aria-label="Midnight"></button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$99</span>
+              <button class="btn btn-cart">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="products-cta fade-in">
+        <a href="#" class="btn btn-outline">View Full Collection →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FEATURE SPLIT ░░ -->
+  <section id="features" class="section features-split">
+    <div class="container split-grid">
+      <div class="split-img fade-in">
+        <img src="https://picsum.photos/seed/cozyhome/700/800" alt="Woman wrapped in blanket by window" />
+        <div class="split-img-accent"></div>
+      </div>
+      <div class="split-text fade-in">
+        <p class="eyebrow">Why CloudNest</p>
+        <h2>More Than a Blanket.<br /><em>A Daily Ritual.</em></h2>
+        <p class="split-intro">We believe comfort is a form of self-care. That's why every CloudNest blanket is made to last, to feel extraordinary, and to become the piece you reach for every single day.</p>
+        <ul class="feature-list">
+          <li>
+            <span class="feat-icon">🧶</span>
+            <div>
+              <strong>Ethically Sourced Fibres</strong>
+              <p>Our merino wool is certified mulesing-free, traceable to the farm.</p>
+            </div>
+          </li>
+          <li>
+            <span class="feat-icon">🌿</span>
+            <div>
+              <strong>Eco-Conscious Production</strong>
+              <p>Carbon-neutral shipping and packaging made from 100% recycled materials.</p>
+            </div>
+          </li>
+          <li>
+            <span class="feat-icon">♻️</span>
+            <div>
+              <strong>Built to Last</strong>
+              <p>Machine washable and pill-resistant — guaranteed to stay soft for years.</p>
+            </div>
+          </li>
+          <li>
+            <span class="feat-icon">🚚</span>
+            <div>
+              <strong>Free Shipping & Returns</strong>
+              <p>Free shipping on orders over $60. 30-day no-questions-asked returns.</p>
+            </div>
+          </li>
+        </ul>
+        <a href="#products" class="btn btn-primary">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ LIFESTYLE GALLERY ░░ -->
+  <section class="section gallery-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="eyebrow">Life with CloudNest</p>
+        <h2>Made for Every Moment</h2>
+      </div>
+      <div class="gallery-grid fade-in">
+        <div class="gallery-item large">
+          <img src="https://picsum.photos/seed/lifestyle1/800/600" alt="Cozy reading nook" />
+          <div class="gallery-overlay"><span>Morning Reads</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/lifestyle2/500/400" alt="Coffee and blanket" />
+          <div class="gallery-overlay"><span>Coffee Moments</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/lifestyle3/500/400" alt="Cozy evening" />
+          <div class="gallery-overlay"><span>Evening Calm</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/lifestyle4/500/400" alt="Blanket on couch" />
+          <div class="gallery-overlay"><span>Movie Nights</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://picsum.photos/seed/lifestyle5/500/400" alt="Picnic blanket" />
+          <div class="gallery-overlay"><span>Outdoor Coziness</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ TESTIMONIALS ░░ -->
+  <section id="testimonials" class="section testimonials-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="eyebrow">Customer Love</p>
+        <h2>What Our Community Says</h2>
+      </div>
+      <div class="carousel-wrap fade-in">
+        <div class="testimonial-track-outer">
+          <div class="testimonial-track">
+
+            <div class="testimonial-card">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <blockquote>"I've owned many blankets but nothing compares to the Azure Cloud Throw. It's been two years and it still feels like new. Worth every penny."</blockquote>
+              <div class="reviewer">
+                <img src="https://picsum.photos/seed/person1/80/80" alt="Emma R." />
+                <div>
+                  <strong>Emma R.</strong>
+                  <span>Portland, OR</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <blockquote>"Gifted the Nordic Knit to my sister and she immediately ordered one for herself. The quality is incredible and the packaging was beautiful."</blockquote>
+              <div class="reviewer">
+                <img src="https://picsum.photos/seed/person2/80/80" alt="James K." />
+                <div>
+                  <strong>James K.</strong>
+                  <span>Chicago, IL</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <blockquote>"Fast shipping, gorgeous product, zero regrets. The Velvet Dreams is silky smooth and the colour is exactly as shown. My new obsession."</blockquote>
+              <div class="reviewer">
+                <img src="https://picsum.photos/seed/person3/80/80" alt="Sophia L." />
+                <div>
+                  <strong>Sophia L.</strong>
+                  <span>Austin, TX</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="stars">⭐⭐⭐⭐⭐</div>
+              <blockquote>"I was sceptical about buying a blanket online but CloudNest's return policy made it easy. Glad I didn't return it — absolutely love it."</blockquote>
+              <div class="reviewer">
+                <img src="https://picsum.photos/seed/person4/80/80" alt="Marcus T." />
+                <div>
+                  <strong>Marcus T.</strong>
+                  <span>Seattle, WA</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" aria-label="Previous">&#8592;</button>
+          <div class="carousel-dots">
+            <button class="carousel-dot active" aria-label="Slide 1"></button>
+            <button class="carousel-dot" aria-label="Slide 2"></button>
+            <button class="carousel-dot" aria-label="Slide 3"></button>
+            <button class="carousel-dot" aria-label="Slide 4"></button>
+          </div>
+          <button class="carousel-btn next" aria-label="Next">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ ABOUT / STORY ░░ -->
+  <section id="about" class="section about-section">
+    <div class="container split-grid reverse">
+      <div class="split-text fade-in">
+        <p class="eyebrow">Our Story</p>
+        <h2>Born from a Cold Winter<br /><em>and a Big Dream</em></h2>
+        <p>CloudNest started in 2012 when founder Sarah Chen spent a particularly harsh winter in Vermont and couldn't find a blanket that was both beautiful and genuinely warm. She started hand-knitting for herself, her friends asked for one, then strangers on Etsy, and a brand was born.</p>
+        <p>Today we partner with small farms and artisan mills across New Zealand, Scotland, and the Peruvian highlands — always prioritising craft, ethics, and the kind of quality that gets passed down through families.</p>
+        <a href="#" class="btn btn-outline">Meet the Team →</a>
+      </div>
+      <div class="split-img fade-in">
+        <img src="https://picsum.photos/seed/ourteam/700/800" alt="Founder knitting" />
+        <div class="split-img-accent right"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ NEWSLETTER ░░ -->
+  <section id="newsletter" class="section newsletter-section">
+    <div class="newsletter-bg">
+      <img src="https://picsum.photos/seed/newsletterbg/1600/600" alt="" />
+      <div class="newsletter-overlay"></div>
+    </div>
+    <div class="container newsletter-content fade-in">
+      <p class="eyebrow light">Stay Cozy</p>
+      <h2>Get 15% Off Your First Order</h2>
+      <p>Join 40,000+ cozy enthusiasts. Receive seasonal lookbooks, care guides, and members-only deals.</p>
+      <form class="newsletter-form" novalidate>
+        <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+        <button type="submit" class="btn btn-primary">Claim My 15% Off</button>
+      </form>
+      <p class="newsletter-note">No spam, ever. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-icon">☁</span>CloudNest
+        </a>
+        <p>Handcrafted blankets made with love, ethically sourced fibres, and obsessive attention to softness.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.852 0 1.265.64 1.265 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.772 0 3.137-1.868 3.137-4.568 0-2.39-1.717-4.059-4.168-4.059-2.837 0-4.5 2.128-4.5 4.328 0 .857.33 1.774.742 2.276a.3.3 0 0 1 .07.284c-.076.315-.245.995-.278 1.134-.044.183-.145.222-.333.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2Z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Merino Wool Throws</a></li>
+          <li><a href="#">Chunky Knit Blankets</a></li>
+          <li><a href="#">Velvet Plush</a></li>
+          <li><a href="#">Gift Sets</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Care Guide</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p>© 2024 CloudNest. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Accessibility</a>
+      </div>
+      <div class="payment-icons">
+        <span title="Visa">VISA</span>
+        <span title="Mastercard">MC</span>
+        <span title="PayPal">PP</span>
+        <span title="Apple Pay">⌘Pay</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ░░ SCROLL TO TOP ░░ -->
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
