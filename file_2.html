@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blai Cozy Blanket — Wrap Yourself in Warmth</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#" class="nav__logo">Blai&nbsp;<span>Cozy</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#collections">Collections</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#order" class="btn btn--sm btn--primary">Shop Now</a>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__media">
+      <img src="https://picsum.photos/seed/cozyblanket/1600/900" alt="Cozy blanket draped over sofa" class="hero__bg" />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content container">
+      <span class="hero__eyebrow">New Autumn Collection 2024</span>
+      <h1 class="hero__title">Wrap Yourself<br />in Pure Comfort</h1>
+      <p class="hero__sub">Handcrafted blankets made from ethically sourced merino wool — softer than a cloud, warmer than home.</p>
+      <div class="hero__cta">
+        <a href="#order" class="btn btn--primary btn--lg">Shop the Collection</a>
+        <a href="#features" class="btn btn--ghost btn--lg">Learn More</a>
+      </div>
+      <div class="hero__badges">
+        <div class="badge"><span class="badge__icon">🌿</span><span>Ethically Sourced</span></div>
+        <div class="badge"><span class="badge__icon">♻️</span><span>Eco Packaging</span></div>
+        <div class="badge"><span class="badge__icon">🚚</span><span>Free Shipping</span></div>
+      </div>
+    </div>
+    <a href="#features" class="hero__scroll" aria-label="Scroll down">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="container trust-bar__inner">
+      <div class="trust-item"><strong>12,000+</strong> Happy Customers</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><strong>4.9★</strong> Average Rating</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><strong>100%</strong> Merino Wool</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><strong>30-Day</strong> Returns</div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Why Blai Cozy</span>
+        <h2 class="section__title">Everything You Deserve in a Blanket</h2>
+        <p class="section__sub">We believe comfort should never compromise quality. Every stitch tells that story.</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature-card" data-animate>
+          <div class="feature-card__icon">
+            <img src="https://picsum.photos/seed/woolfiber/80/80" alt="Merino wool close-up" />
+          </div>
+          <h3>Ultra-Soft Merino</h3>
+          <p>Grade-A merino wool that gets softer with every wash, never itchy, always luxurious.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-card__icon">
+            <img src="https://picsum.photos/seed/warmth/80/80" alt="Warmth icon" />
+          </div>
+          <h3>All-Season Warmth</h3>
+          <p>Natural temperature regulation keeps you cozy in winter and comfortably cool in summer.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-card__icon">
+            <img src="https://picsum.photos/seed/weave/80/80" alt="Weave pattern" />
+          </div>
+          <h3>Artisan Weave</h3>
+          <p>Each blanket is hand-finished by skilled artisans using traditional looming techniques.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-card__icon">
+            <img src="https://picsum.photos/seed/wash/80/80" alt="Easy care" />
+          </div>
+          <h3>Easy Care</h3>
+          <p>Machine washable on gentle cycle — because life is too short for dry-clean-only blankets.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-card__icon">
+            <img src="https://picsum.photos/seed/sustainable/80/80" alt="Sustainable" />
+          </div>
+          <h3>Sustainably Made</h3>
+          <p>Carbon-neutral production, recycled packaging, and a tree planted for every order.</p>
+        </div>
+        <div class="feature-card" data-animate>
+          <div class="feature-card__icon">
+            <img src="https://picsum.photos/seed/gift/80/80" alt="Gift ready" />
+          </div>
+          <h3>Gift-Ready</h3>
+          <p>Arrives in a beautiful keepsake box with a handwritten card option at checkout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY / SPLIT SECTION -->
+  <section class="story section" id="story">
+    <div class="container story__grid">
+      <div class="story__images">
+        <img src="https://picsum.photos/seed/blanketfold/600/700" alt="Neatly folded blanket" class="story__img story__img--main" />
+        <img src="https://picsum.photos/seed/fireplace/300/300" alt="Blanket by fireplace" class="story__img story__img--accent" />
+      </div>
+      <div class="story__text">
+        <span class="section__eyebrow">Our Story</span>
+        <h2 class="section__title">Born from a Cold Night in Etchelroy</h2>
+        <p>It started with a single blanket, made by hand in the small mountain village of Etchelroy. Our founder, exhausted by thin, scratchy store-bought throws, spent a winter perfecting the ideal weave — one that felt like a hug.</p>
+        <p>Today, we partner with family-run farms across New Zealand and Patagonia to source the finest merino fleece, woven in our small-batch studio by artisans who have been crafting textiles for generations.</p>
+        <a href="#collections" class="btn btn--primary">Explore Our Craft</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="collections section" id="collections">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Collections</span>
+        <h2 class="section__title">Find Your Perfect Blanket</h2>
+        <p class="section__sub">Three collections, each with a distinct character — all sharing our uncompromising softness.</p>
+      </div>
+      <div class="collections__grid">
+        <div class="product-card" data-animate>
+          <div class="product-card__img-wrap">
+            <img src="https://picsum.photos/seed/alpineblue/480/560" alt="Alpine Collection blanket in blue" />
+            <span class="product-card__tag">Best Seller</span>
+          </div>
+          <div class="product-card__body">
+            <h3>Alpine Collection</h3>
+            <p>Heavyweight warmth in rich earth tones. Perfect for the coldest nights.</p>
+            <div class="product-card__footer">
+              <span class="price">$129</span>
+              <a href="#order" class="btn btn--primary btn--sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-card product-card--featured" data-animate>
+          <div class="product-card__img-wrap">
+            <img src="https://picsum.photos/seed/creammerino/480/560" alt="Ivory merino blanket" />
+            <span class="product-card__tag product-card__tag--new">New</span>
+          </div>
+          <div class="product-card__body">
+            <h3>Merino Luxe</h3>
+            <p>Our lightest, most breathable weave — silky smooth in timeless neutrals.</p>
+            <div class="product-card__footer">
+              <span class="price">$159</span>
+              <a href="#order" class="btn btn--primary btn--sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-card" data-animate>
+          <div class="product-card__img-wrap">
+            <img src="https://picsum.photos/seed/forestgreen/480/560" alt="Forest green chunky knit" />
+            <span class="product-card__tag product-card__tag--sale">Sale</span>
+          </div>
+          <div class="product-card__body">
+            <h3>Chunky Knit</h3>
+            <p>Oversized, cozy-chic texture that doubles as a statement home accessory.</p>
+            <div class="product-card__footer">
+              <span class="price"><s>$109</s> $89</span>
+              <a href="#order" class="btn btn--primary btn--sm">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process section" id="process">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">How It's Made</span>
+        <h2 class="section__title">From Fleece to Your Doorstep</h2>
+      </div>
+      <div class="process__steps">
+        <div class="process-step" data-animate>
+          <div class="process-step__num">01</div>
+          <img src="https://picsum.photos/seed/shearing/200/200" alt="Shearing sheep" />
+          <h4>Ethical Shearing</h4>
+          <p>Fleece is hand-gathered from free-range merino sheep during their annual shear.</p>
+        </div>
+        <div class="process-step__line"></div>
+        <div class="process-step" data-animate>
+          <div class="process-step__num">02</div>
+          <img src="https://picsum.photos/seed/spinning/200/200" alt="Spinning wool" />
+          <h4>Natural Spinning</h4>
+          <p>Cleaned fibres are spun into fine yarn using cold mountain spring water.</p>
+        </div>
+        <div class="process-step__line"></div>
+        <div class="process-step" data-animate>
+          <div class="process-step__num">03</div>
+          <img src="https://picsum.photos/seed/loom/200/200" alt="Loom weaving" />
+          <h4>Artisan Weaving</h4>
+          <p>Experienced weavers hand-finish each blanket on heritage wooden looms.</p>
+        </div>
+        <div class="process-step__line"></div>
+        <div class="process-step" data-animate>
+          <div class="process-step__num">04</div>
+          <img src="https://picsum.photos/seed/packageship/200/200" alt="Packaged blanket" />
+          <h4>Delivered to You</h4>
+          <p>Packed in recyclable materials and shipped carbon-neutral to your door.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Customer Love</span>
+        <h2 class="section__title">What Our Community Says</h2>
+      </div>
+      <div class="testimonials__track" id="testimonialsTrack">
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <blockquote>"I've bought blankets from everywhere. Nothing comes close. It's like sleeping under a cloud that also knows your name."</blockquote>
+          <div class="testimonial-card__author">
+            <img src="https://picsum.photos/seed/person1/48/48" alt="Sophie M." />
+            <div><strong>Sophie M.</strong><span>London, UK</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <blockquote>"Bought the Alpine Collection as a Christmas gift. My mum cried. I'm buying six more."</blockquote>
+          <div class="testimonial-card__author">
+            <img src="https://picsum.photos/seed/person2/48/48" alt="James R." />
+            <div><strong>James R.</strong><span>Edinburgh, UK</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <blockquote>"Fast delivery, stunning packaging, and the blanket itself is absolutely dreamy. 10/10 would recommend to every human."</blockquote>
+          <div class="testimonial-card__author">
+            <img src="https://picsum.photos/seed/person3/48/48" alt="Clara V." />
+            <div><strong>Clara V.</strong><span>Amsterdam, NL</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <blockquote>"The Merino Luxe is something else entirely. Soft, warm, beautiful. My cat has claimed it and I don't even mind."</blockquote>
+          <div class="testimonial-card__author">
+            <img src="https://picsum.photos/seed/person4/48/48" alt="Aiko T." />
+            <div><strong>Aiko T.</strong><span>Tokyo, JP</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <blockquote>"Sustainable, gorgeous, and genuinely warm. Blai Cozy is exactly what I was looking for. My new go-to gift brand."</blockquote>
+          <div class="testimonial-card__author">
+            <img src="https://picsum.photos/seed/person5/48/48" alt="Marco D." />
+            <div><strong>Marco D.</strong><span>Milan, IT</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonials__controls">
+        <button class="testimonials__btn" id="tPrev" aria-label="Previous">&#8592;</button>
+        <div class="testimonials__dots" id="tDots"></div>
+        <button class="testimonials__btn" id="tNext" aria-label="Next">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER / CTA SECTION -->
+  <section class="order section" id="order">
+    <div class="container">
+      <div class="order__grid">
+        <div class="order__visual">
+          <img src="https://picsum.photos/seed/blanketgift/600/600" alt="Blai Cozy blanket gift box" />
+        </div>
+        <div class="order__form-wrap">
+          <span class="section__eyebrow">Limited Autumn Stock</span>
+          <h2 class="section__title">Ready to Get Cozy?</h2>
+          <p>Order before <strong>October 31st</strong> and receive a complimentary cedar-scented sachet with every blanket.</p>
+          <form class="order__form" id="orderForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Sophie" required />
+                <span class="form-error" id="err-firstName"></span>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Miller" required />
+                <span class="form-error" id="err-lastName"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="sophie@example.com" required />
+              <span class="form-error" id="err-email"></span>
+            </div>
+            <div class="form-group">
+              <label for="collection">Choose Collection</label>
+              <select id="collection" name="collection" required>
+                <option value="">— Select a collection —</option>
+                <option value="alpine">Alpine Collection — $129</option>
+                <option value="luxe">Merino Luxe — $159</option>
+                <option value="chunky">Chunky Knit — $89</option>
+              </select>
+              <span class="form-error" id="err-collection"></span>
+            </div>
+            <div class="form-group">
+              <label for="qty">Quantity</label>
+              <input type="number" id="qty" name="qty" min="1" max="10" value="1" required />
+              <span class="form-error" id="err-qty"></span>
+            </div>
+            <div class="form-group form-group--check">
+              <label class="checkbox-label">
+                <input type="checkbox" id="giftWrap" name="giftWrap" />
+                <span>Add gift wrap &amp; handwritten card (+$8)</span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full btn--lg">Place Order</button>
+          </form>
+          <div class="order__success" id="orderSuccess" hidden>
+            <div class="order__success-icon">🎉</div>
+            <h3>Order Received!</h3>
+            <p>Thank you! We'll confirm your order via email within minutes.</p>
+          </div>
+          <p class="order__secure">🔒 Secure checkout &nbsp;·&nbsp; 30-day returns &nbsp;·&nbsp; Free shipping</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq section" id="faq">
+    <div class="container faq__wrap">
+      <div class="section__header">
+        <span class="section__eyebrow">FAQ</span>
+        <h2 class="section__title">Questions? We've Got Answers.</h2>
+      </div>
+      <div class="faq__list">
+        <div class="faq-item" data-animate>
+          <button class="faq-item__q" aria-expanded="false">How do I wash my Blai Cozy blanket?</button>
+          <div class="faq-item__a"><p>Machine wash on a gentle/cold cycle with a wool-safe detergent. Lay flat to dry. Do not tumble dry or iron.</p></div>
+        </div>
+        <div class="faq-item" data-animate>
+          <button class="faq-item__q" aria-expanded="false">Where do you ship?</button>
+          <div class="faq-item__a"><p>We ship worldwide. Standard delivery is free and takes 5–8 business days. Express options are available at checkout.</p></div>
+        </div>
+        <div class="faq-item" data-animate>
+          <button class="faq-item__q" aria-expanded="false">Can I return or exchange my blanket?</button>
+          <div class="faq-item__a"><p>Absolutely. We offer a 30-day no-questions-asked return policy. Items must be unwashed and in original packaging.</p></div>
+        </div>
+        <div class="faq-item" data-animate>
+          <button class="faq-item__q" aria-expanded="false">Are your products really ethically sourced?</button>
+          <div class="faq-item__a"><p>Yes. All our farms are certified under the Responsible Wool Standard (RWS). We publish full supply-chain transparency reports annually.</p></div>
+        </div>
+        <div class="faq-item" data-animate>
+          <button class="faq-item__q" aria-expanded="false">What sizes are the blankets?</button>
+          <div class="faq-item__a"><p>All Blai Cozy blankets are 150cm × 200cm (59" × 79") — a generous throw size, ideal for one person or sharing on a sofa.</p></div>
+        </div>
+        <div class="faq-item" data-animate>
+          <button class="faq-item__q" aria-expanded="false">Do you offer bulk or corporate gifting?</button>
+          <div class="faq-item__a"><p>Yes! Orders of 10+ blankets receive a 15% discount and complimentary custom branding. Email gifts@blaicozy.com to get started.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM / GALLERY -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">@blaicozy</span>
+        <h2 class="section__title">As Seen in the Wild
