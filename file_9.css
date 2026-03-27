@@ -593,3 +593,404 @@ input  { font-family: inherit; }
   color: var(--navy);
 }
 .product
+# filename: script.js
+```javascript
+// ============================================================
+// CozyNest Blankets — script.js  (final, complete version)
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ──────────────────────────────────────────────
+     1. NAVBAR — shrink + hide/show on scroll
+  ────────────────────────────────────────────── */
+  const navbar = document.getElementById('navbar');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const current = window.scrollY;
+
+    if (current > 80) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+
+    if (current > lastScroll && current > 200) {
+      navbar.classList.add('nav-hidden');
+    } else {
+      navbar.classList.remove('nav-hidden');
+    }
+
+    lastScroll = current <= 0 ? 0 : current;
+  });
+
+  /* ──────────────────────────────────────────────
+     2. MOBILE MENU TOGGLE
+  ────────────────────────────────────────────── */
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.classList.toggle('active', open);
+  });
+
+  // Close menu when a link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burger.classList.remove('active');
+      burger.setAttribute('aria-expanded', false);
+    });
+  });
+
+  /* ──────────────────────────────────────────────
+     3. SMOOTH SCROLL for anchor links
+  ────────────────────────────────────────────── */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const offset = navbar.offsetHeight + 8;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+
+  /* ──────────────────────────────────────────────
+     4. HERO PARALLAX
+  ────────────────────────────────────────────── */
+  const heroBg = document.querySelector('.hero-bg');
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      heroBg.style.transform = `translateY(${y * 0.35}px)`;
+    }, { passive: true });
+  }
+
+  /* ──────────────────────────────────────────────
+     5. SCROLL-REVEAL  (Intersection Observer)
+  ────────────────────────────────────────────── */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ──────────────────────────────────────────────
+     6. PRODUCT CAROUSEL / SLIDER
+  ────────────────────────────────────────────── */
+  const track = document.getElementById('product-track');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const dotsContainer = document.getElementById('carousel-dots');
+
+  if (track && prevBtn && nextBtn) {
+    const slides = Array.from(track.children);
+    let currentIndex = 0;
+    let autoInterval;
+
+    // Build dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' dot-active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function getVisibleCount() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 640) return 2;
+      return 1;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, slides.length - getVisibleCount());
+    }
+
+    function goTo(index) {
+      currentIndex = Math.min(Math.max(index, 0), getMaxIndex());
+      const slideWidth = track.parentElement.offsetWidth / getVisibleCount();
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+      dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
+        d.classList.toggle('dot-active', i === currentIndex);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex >= getMaxIndex();
+    }
+
+    prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
+
+    window.addEventListener('resize', () => goTo(currentIndex));
+
+    // Auto-advance
+    function startAuto() {
+      autoInterval = setInterval(() => {
+        goTo(currentIndex >= getMaxIndex() ? 0 : currentIndex + 1);
+      }, 4000);
+    }
+
+    function stopAuto() { clearInterval(autoInterval); }
+
+    track.parentElement.addEventListener('mouseenter', stopAuto);
+    track.parentElement.addEventListener('mouseleave', startAuto);
+
+    goTo(0);
+    startAuto();
+
+    // Touch / swipe
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) goTo(currentIndex + (diff > 0 ? 1 : -1));
+    });
+  }
+
+  /* ──────────────────────────────────────────────
+     7. TESTIMONIAL ROTATOR
+  ────────────────────────────────────────────── */
+  const testimonials = document.querySelectorAll('.testimonial-card');
+  const tPrev = document.getElementById('t-prev');
+  const tNext = document.getElementById('t-next');
+
+  if (testimonials.length && tPrev && tNext) {
+    let tIndex = 0;
+
+    function showTestimonial(index) {
+      testimonials.forEach((el, i) => {
+        el.classList.toggle('t-active', i === index);
+        el.setAttribute('aria-hidden', i !== index);
+      });
+    }
+
+    tPrev.addEventListener('click', () => {
+      tIndex = (tIndex - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(tIndex);
+    });
+
+    tNext.addEventListener('click', () => {
+      tIndex = (tIndex + 1) % testimonials.length;
+      showTestimonial(tIndex);
+    });
+
+    showTestimonial(0);
+
+    // Auto rotate testimonials
+    setInterval(() => {
+      tIndex = (tIndex + 1) % testimonials.length;
+      showTestimonial(tIndex);
+    }, 5500);
+  }
+
+  /* ──────────────────────────────────────────────
+     8. COUNTER ANIMATION (stats section)
+  ────────────────────────────────────────────── */
+  const counters = document.querySelectorAll('[data-count]');
+
+  const countObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = +el.getAttribute('data-count');
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 1800;
+      const start = performance.now();
+
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
+        el.textContent = Math.round(ease * target).toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+
+      requestAnimationFrame(update);
+      countObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => countObserver.observe(c));
+
+  /* ──────────────────────────────────────────────
+     9. FAQ ACCORDION
+  ────────────────────────────────────────────── */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('faq-open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('faq-open');
+        i.querySelector('.faq-answer').style.maxHeight = null;
+        i.querySelector('.faq-icon').textContent = '+';
+      });
+
+      // Open clicked (if was closed)
+      if (!isOpen) {
+        item.classList.add('faq-open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        item.querySelector('.faq-icon').textContent = '−';
+      }
+    });
+  });
+
+  /* ──────────────────────────────────────────────
+     10. NEWSLETTER FORM
+  ────────────────────────────────────────────── */
+  const newsletterForm = document.getElementById('newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const input = newsletterForm.querySelector('input[type="email"]');
+      const msg = document.getElementById('newsletter-msg');
+
+      if (!input.value || !input.validity.valid) {
+        msg.textContent = 'Please enter a valid email address.';
+        msg.className = 'newsletter-msg error';
+        return;
+      }
+
+      msg.textContent = '🎉 You\'re on the list! Cozy deals incoming.';
+      msg.className = 'newsletter-msg success';
+      input.value = '';
+
+      setTimeout(() => { msg.textContent = ''; msg.className = 'newsletter-msg'; }, 5000);
+    });
+  }
+
+  /* ──────────────────────────────────────────────
+     11. PRODUCT CARD — colour swatch hover
+  ────────────────────────────────────────────── */
+  document.querySelectorAll('.swatch').forEach(swatch => {
+    swatch.addEventListener('click', function () {
+      const card = this.closest('.product-card');
+      const img = card.querySelector('.product-img');
+      const color = this.getAttribute('data-color');
+      const seed = this.getAttribute('data-seed');
+
+      card.querySelectorAll('.swatch').forEach(s => s.classList.remove('swatch-active'));
+      this.classList.add('swatch-active');
+
+      if (seed && img) {
+        img.style.opacity = '0';
+        setTimeout(() => {
+          img.src = `https://picsum.photos/seed/${seed}/600/700`;
+          img.style.opacity = '1';
+        }, 200);
+      }
+
+      const badge = card.querySelector('.color-label');
+      if (badge && color) badge.textContent = color;
+    });
+  });
+
+  /* ──────────────────────────────────────────────
+     12. ADD TO CART feedback
+  ────────────────────────────────────────────── */
+  document.querySelectorAll('.btn-cart').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const original = this.textContent;
+      this.textContent = '✓ Added!';
+      this.classList.add('btn-added');
+      this.disabled = true;
+
+      // Update cart badge
+      const badge = document.getElementById('cart-badge');
+      if (badge) {
+        const count = parseInt(badge.textContent || '0') + 1;
+        badge.textContent = count;
+        badge.style.display = 'inline-flex';
+        badge.classList.add('bump');
+        setTimeout(() => badge.classList.remove('bump'), 400);
+      }
+
+      setTimeout(() => {
+        this.textContent = original;
+        this.classList.remove('btn-added');
+        this.disabled = false;
+      }, 2000);
+    });
+  });
+
+  /* ──────────────────────────────────────────────
+     13. STICKY CTA BAR — appears after hero
+  ────────────────────────────────────────────── */
+  const stickyBar = document.getElementById('sticky-bar');
+  const heroSection = document.getElementById('hero');
+
+  if (stickyBar && heroSection) {
+    window.addEventListener('scroll', () => {
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      stickyBar.classList.toggle('sticky-bar-visible', window.scrollY > heroBottom);
+    }, { passive: true });
+  }
+
+  /* ──────────────────────────────────────────────
+     14. IMAGE LAZY LOAD FADE-IN
+  ────────────────────────────────────────────── */
+  const lazyImages = document.querySelectorAll('img[data-src]');
+  const imgObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.getAttribute('data-src');
+        img.removeAttribute('data-src');
+        img.classList.add('img-loaded');
+        imgObserver.unobserve(img);
+      }
+    });
+  }, { rootMargin: '200px' });
+
+  lazyImages.forEach(img => imgObserver.observe(img));
+
+  /* ──────────────────────────────────────────────
+     15. BACK TO TOP BUTTON
+  ────────────────────────────────────────────── */
+  const backTop = document.getElementById('back-top');
+  if (backTop) {
+    window.addEventListener('scroll', () => {
+      backTop.classList.toggle('back-top-visible', window.scrollY > 500);
+    }, { passive: true });
+
+    backTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ──────────────────────────────────────────────
+     16. CURSOR GLOW (subtle, desktop only)
+  ────────────────────────────────────────────── */
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const glow = document.createElement('div');
+    glow.id = 'cursor-glow';
+    document.body.appendChild(glow);
+
+    document.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => glow.classList.add('glow-active'));
+      el.addEventListener('mouseleave', () => glow.classList.remove('glow-active'));
+    });
+  }
+
+});
